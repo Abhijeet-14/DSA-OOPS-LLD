@@ -1,14 +1,7 @@
 package _dsa._15_12_21_practice.Tree;
 
 public class C5_Height_BT {
-    private static class Node {
-        int data;
-        Node left, right;
 
-        public Node(int data) {
-            this.data = data;
-        }
-    }
 
     public static void main(String[] args) {
         Node root = new Node(10);
@@ -30,5 +23,12 @@ public class C5_Height_BT {
 
         return Math.max(height(root.left), height(root.right)) + 1;
     }
+    private static class Node {
+        int data;
+        Node left, right;
 
+        public Node(int data) {
+            this.data = data;
+        }
+    }
 }

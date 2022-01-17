@@ -76,6 +76,7 @@ public class C7_Dijkstra_Wt {
                 // x-travel_wt + y.edge_wt < y-travel_wt
                 if(weight[curr_pair.y] + child.wt < weight[child.y]) { // c
                     pq.remove(new Pair(child.y, weight[child.y])); // logE
+
                     weight[child.y] = weight[curr_pair.y] + child.wt; // c
                     pq.add(new Pair(child.y, weight[child.y])); // logE
                 }

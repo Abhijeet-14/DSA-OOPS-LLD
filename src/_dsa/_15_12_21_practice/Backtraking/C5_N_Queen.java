@@ -41,7 +41,7 @@ public class C5_N_Queen {
         if(x < 0 && y < 0 && x >= N && y >= N && mat[x][y] != 0)
             return false;
 
-        // check horizontally
+        // check horizontally 0 to COL
         for(int i = 0; i < y; i++) {
             if(mat[x][i] != 0)
                 return false;

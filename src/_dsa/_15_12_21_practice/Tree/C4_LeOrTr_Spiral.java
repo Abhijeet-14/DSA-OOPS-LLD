@@ -3,7 +3,7 @@ package _dsa._15_12_21_practice.Tree;
 
 import java.util.Stack;
 
-public class C4_LOT_Spiral {
+public class C4_LeOrTr_Spiral {
     private static class Node {
         int data;
         Node left;
