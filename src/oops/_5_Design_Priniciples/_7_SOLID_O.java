@@ -37,7 +37,7 @@ class CalculateArea {
             System.out.println("Circle Area " + c);
         }
         // NOW we don't have logic for any other shape.
-        // if u'll try TRIANGLE... then we need to implement its logic.
+        // if You'll try TRIANGLE... then we need to implement its logic.
     }
 }
 // this Violating Open-Close-Principle...
@@ -54,7 +54,7 @@ class React extends AreaCalculate{
 
     @Override
     public void calculate(Object shape) {
-        System.out.println("Reactangle Area");
+        System.out.println("Rectangle Area");
     }
 }
 class Cir extends AreaCalculate{

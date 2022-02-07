@@ -1,14 +1,7 @@
 package _dsa._15_12_21_practice.LinkedList;
 
 public class C1_Middle_Of_LL {
-    static class Node {
-        int data;
-        Node next;
 
-        public Node(int data) {
-            this.data = data;
-        }
-    }
 
     public static void main(String[] args) {
         Node root = new Node(10);
@@ -36,5 +29,13 @@ public class C1_Middle_Of_LL {
         }
 
         return sec.data;
+    }
+    static class Node {
+        int data;
+        Node next;
+
+        public Node(int data) {
+            this.data = data;
+        }
     }
 }

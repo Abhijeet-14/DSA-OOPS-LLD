@@ -5,7 +5,7 @@ public class Driver extends AbstractClass {
     public static void main(String[] args) {
         Driver d = new Driver();
         d.abstractMethod();
-        d.normatMethod();
+        d.normalMethod();
     }
     @Override
     public  void abstractMethod() {

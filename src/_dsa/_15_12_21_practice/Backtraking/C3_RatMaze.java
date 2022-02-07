@@ -48,13 +48,13 @@ public class C3_RatMaze {
             // DOWN
             if(solveMaze(i + 1, j) == true)
                 return true;
+            // right
             else if(solveMaze(i, j + 1) == true)
                 return true;
 
             solution[i][j] = 0;
             return false;
         }
-        ;
 
         return false;
     }

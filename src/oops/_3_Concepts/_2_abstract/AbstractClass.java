@@ -9,7 +9,7 @@ package oops._3_Concepts._2_abstract;
 public abstract class AbstractClass {
     public  abstract void abstractMethod();
 
-    public void normatMethod(){
+    public void normalMethod(){
         // we can define normal method & implementation in abstract class.
         // but we can implement in INTERFACE
         System.out.println("Normal method in abstract class");

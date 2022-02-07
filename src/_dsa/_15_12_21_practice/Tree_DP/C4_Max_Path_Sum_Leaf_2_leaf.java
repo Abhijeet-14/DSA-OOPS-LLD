@@ -1,32 +1,28 @@
 package _dsa._15_12_21_practice.Tree_DP;
 
-public class C3_Max_Path_Sum_Any_Node_To_Any {
+public class C4_Max_Path_Sum_Leaf_2_leaf {
     public static void main(String[] args) {
-        // 4 case
-        // root.data + left_subTree.sum + right_subTree.sum
-        // left_subTree.sum + root
-        // right_subTree.sum + root
-        // root
-        // we need find max in bw these 4 value.
-
         Node root = new Node(1);
-        root.left = new Node(-2);
-        root.left.right = new Node(4);
-        root.left.left = new Node(5);
-        root.right = new Node(3);
+        root.left = new Node(2);
+        root.left.right = new Node(-4);
+        root.left.left = new Node(-5);
+        root.right = new Node(-3);
 
         int rec = solve_rec(root);
-        System.out.println(rec + " :- 4 cases (NLR, NL, NR, R) - Any Node to Any Node");
-        System.out.println(res);
-
+        System.out.println(rec);
+        System.out.println("Ans (3 case): " + res);
     }
 
-    static int res = 0;
+    static int res = Integer.MIN_VALUE;
 
     private static int solve_rec(Node root) {
         // Base Condition
         if(root == null)
             return 0;
+
+        // leaf node
+        if(root.left == null && root.right == null)
+            return root.data;
 
         int left_ST_S = solve_rec(root.left);
         int right_ST_S = solve_rec(root.right);
@@ -37,21 +33,25 @@ public class C3_Max_Path_Sum_Any_Node_To_Any {
         int NL = left_ST_S + root.data;
         // Case 3: right + root
         int NR = right_ST_S + root.data;
-        // Case 4: root
-        int N = root.data;
 
-        int mx_1 = Math.max(NL, NR);
+        if(root.left == null) {
+            return NR;
+        } else if(root.right == null) {
+            return NL;
+        } else {
 
-        int mx_at_node = Math.max(mx_1, N);
+            int mx_1 = Math.max(NL, NR);
 
-        int mx_all = Math.max(NLR, mx_at_node);
+            int mx_at_node = mx_1;
 
-        res = Math.max(mx_all, res);
+            res = Math.max(res, NLR);
+
+            return mx_at_node;
+        }
+
 
         // returning the max at that Node
-        return mx_at_node;
     }
-
 
     static class Node {
         int data;

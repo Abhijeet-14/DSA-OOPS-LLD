@@ -13,7 +13,7 @@ public class C2_dfs {
     // (V*C + E)
     // O(V+E)
 
-    // Auxillary Space = O(V) -> visited array or Recursion Stack Max Length(V)
+    // Auxiliary Space = O(V) -> visited array or Recursion Stack Max Length(V)
 
     static List<List<Integer>> V = new ArrayList<>();
     static boolean visited[];
