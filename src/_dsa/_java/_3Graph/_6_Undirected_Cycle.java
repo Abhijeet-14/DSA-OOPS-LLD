@@ -46,7 +46,8 @@ public class _6_Undirected_Cycle {
 		for (int i = 0; i < V; i++) {
 			if (visited[i] == false) {
 				if (dfsRec(adj, visited, i, -1) == true)
-					return true;
+					System.out.println(true + " at " + i);
+//				return true;
 			}
 		}
 
@@ -63,7 +64,9 @@ public class _6_Undirected_Cycle {
 
 			if (visited[child] == false) {
 				if (dfsRec(adj, visited, child, source) == true)
-					return true;
+				{
+					System.out.println("Cyc -> " + child + " => " + source);
+					return true;}
 			} else if (child != parent)
 				return true;
 		}
@@ -85,4 +88,10 @@ public class _6_Undirected_Cycle {
 }
 
 //
-// 6 6 0 1 1 2 2 4 4 5 1 3 3 2
+// 6 6
+// 0 1
+// 0 2
+// 0 3
+// 2 5
+// 2 4
+// 2 1
