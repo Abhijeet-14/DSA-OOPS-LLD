@@ -1,7 +1,7 @@
 package _dsa._0_LeetCode_Village.Number_Theory;
 
 
-public class Detect_Cycle_Element_In_Graph_And_Node_Distance {
+public class _1_is_prime {
     public static void main(String[] args) {
 
     }
