@@ -49,7 +49,7 @@ public class C1_Seive_Of_EartoSenthenes {
 			for (int j = 2 * i; j < n; j += i) {
 				isPrime[j] = false;
 			}
-		}
+		}	
 
 		return isPrime;
 	}
