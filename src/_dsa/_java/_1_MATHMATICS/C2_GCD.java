@@ -2,6 +2,7 @@ package _dsa._java._1_MATHMATICS;
 
 public class C2_GCD {
 
+	// TC - O(log(min(a, b))
 	public static void main(String[] args) {
 		int ans = gcd(16, 72);
 		
