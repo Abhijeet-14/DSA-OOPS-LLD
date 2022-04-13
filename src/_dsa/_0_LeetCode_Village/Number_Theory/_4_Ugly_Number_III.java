@@ -1,6 +1,9 @@
 package _dsa._0_LeetCode_Village.Number_Theory;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class _4_Ugly_Number_III {
     /* Problem Statement: 
     * An ugly number is a positive integer that is divisible by a, b, or c.

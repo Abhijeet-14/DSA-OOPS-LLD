@@ -1,6 +1,9 @@
 package _dsa._0_LeetCode_Village.Number_Theory;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class _3_x_of_a_kind_in_a_deck_of_cards {
     /* Problem Statement: 
     * In a deck of cards, each card has an integer written on it.

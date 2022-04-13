@@ -8,7 +8,7 @@ public class _2_add_digits {
 
     }
 
-    public staic int addDigits(int num) {
+    public static int addDigits(int num) {
         /* Logic: 
         * if num is < 10 -> Single Digit => return num
         * check sum >=10 with while

@@ -1,6 +1,8 @@
 package _dsa._0_LeetCode_Village.Number_Theory;
 
 
+import java.util.Arrays;
+
 public class _1_is_prime {
     public static void main(String[] args) {
 

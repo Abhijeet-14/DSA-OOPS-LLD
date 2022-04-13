@@ -15,7 +15,7 @@ public class _1_Add_2_number {
 
     }
     
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         /* Logic:
         * add l1.val + l2.val + carry
         * if total > 10... then take 0th digit number
@@ -52,5 +52,15 @@ public class _1_Add_2_number {
             return new ListNode(0);
         
         return res.next ;
+    }
+
+    static class ListNode{
+        int val;
+        ListNode next;
+
+        public ListNode(){}
+        public ListNode(int data){this.val = data;}
+        public ListNode(int data, ListNode next){this.val = data; this.next = next;}
+
     }
 }
