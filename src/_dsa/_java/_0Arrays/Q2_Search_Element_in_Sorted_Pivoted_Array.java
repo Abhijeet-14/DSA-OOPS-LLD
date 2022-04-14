@@ -9,12 +9,16 @@ public class Q2_Search_Element_in_Sorted_Pivoted_Array {
 		
 		while(low<=high) {
 			int mid = low + (high-low)/2;
-			
-			if(mid<high && a[mid]>a[mid+1]) {
-				System.out.println(mid); break; 
+
+			int prev = (a.length + mid-1)%a.length;
+			int next = (mid+1)%a.length;
+
+			if(a[mid]>a[prev] && a[mid]>a[next])
+			{
+				System.out.println(mid);
+				break;
 			}
-			else if( mid>low && a[mid]>a[mid-1])
-				System.out.println(mid-1);
+
 			else if( a[mid] >= a[high]) {
 				low = mid+1;
 			}
