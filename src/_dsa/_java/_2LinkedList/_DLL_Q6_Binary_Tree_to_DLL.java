@@ -1,6 +1,6 @@
 package _dsa._java._2LinkedList;
 
-public class _DDL_Q6_Binary_Tree_to_DLL {
+public class _DLL_Q6_Binary_Tree_to_DLL {
 
 	// root --> Root of Binary Tree
 	Node root;

@@ -16,16 +16,13 @@ public class C6_Pattern_Searching_Naive {
 		int m = patt.length();
 
 		for (int i = 0; i < n - m + 1; i++) {
-			// boolean flag = true;
 			int j;
 			for (j = 0; j < m; j++) {
 				if (text.charAt(i + j) != patt.charAt(j)) {
-					// flag = false;
 					break;
 				}
 			}
-			// if(flag == true)
-			// System.out.print( i + " ");
+
 			if (j == m)
 				System.out.print(i + " ");
 		}

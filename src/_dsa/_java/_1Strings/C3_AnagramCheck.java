@@ -7,18 +7,19 @@ public class C3_AnagramCheck {
 	static final int CHAR = 256;
 
 	public static void main(String[] args) {
+		System.out.println("Anagram Check:");
 
 		String S1 = "silent";
 		String S2 = "listen";
 
-		// Time: O(nlgn) Aux Space: O(n)
+		// Time: O(nlogn) Aux Space: O(n)
 		boolean ans1 = naive(S1, S2);
+		System.out.println("Naive: " + ans1);
 
 		// Time: O(n + CHAR) -> O(n) Aux Space: O(CHAR) -> O(1)
 		boolean ans2 = efficient(S1, S2);
+		System.out.println("optimize: " + ans2);
 
-		System.out.println(ans1);
-		System.out.println(ans2);
 	}
 
 	static boolean naive(String S1, String S2) {

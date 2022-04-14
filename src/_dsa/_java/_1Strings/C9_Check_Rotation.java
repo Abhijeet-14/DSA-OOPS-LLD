@@ -9,8 +9,10 @@ public class C9_Check_Rotation {
 		System.out.println("TIME: O(n^2)");
 		naive(s1, s2);
 
-		System.out.println("TIME: O(n)");
-		efficient(s1, s2);
+//		System.out.println("TIME: O(n)");
+//		efficient(s1, s2);
+
+		System.out.println((s1+s1).contains(s2));
 	}
 
 	private static void naive(String s1, String s2) {
@@ -36,6 +38,12 @@ public class C9_Check_Rotation {
 		System.out.println("No!!");
 	}
 
+	private static void efficient_2 (String s1, String s2) {
+
+		String str = s1+s1;
+
+		System.out.println("Result: " + str.contains(s2));
+	}
 	private static void efficient(String s1, String s2) {
 		if (s1.length() != s2.length()) {
 			System.out.println("No!!");

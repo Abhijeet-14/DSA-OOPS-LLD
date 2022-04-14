@@ -4,7 +4,7 @@ public class C5_LeftMostNonRepeatingCharacter {
 
 	public static void main(String[] args) {
 
-		String str = "abcdbcad";
+		String str = "acdbad";
 
 		naive(str);
 
