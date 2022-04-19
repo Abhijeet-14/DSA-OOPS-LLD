@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class C9_SnakeLadder {
+public class C10_SnakeLadder {
     public static void main(String[] args) {
         int N = 30;
         int moves[] = new int[N];
