@@ -22,3 +22,6 @@ for i in range(1,6):
 
 for k, v in dict.items():
     print(k, v)
+
+print (d.keys())    
+print (d.values())    
