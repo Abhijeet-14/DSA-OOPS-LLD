@@ -17,6 +17,8 @@ public class C11_min_time_req_to_rottern_all_oranges {
         visited = new boolean[n][m];
 
         int count = 0;
+
+        // Similar to count island
         for(int i=0; i<n; i++){
             for(int j=0;j<m;j++){
                 if(visited[i][j] == false && v[i][j] !=0){
