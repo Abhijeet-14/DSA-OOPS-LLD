@@ -29,11 +29,11 @@ public class C2_Rotate_By_1_Element {
 //        3) Move elements of bottom row.
 //        4) Move elements of first column.
         System.out.println("Rotation");
-        rotation(mat);
-        rotation(mat1);
-        rotation(mat2);
-        rotation(mat3);
-        rotation(mat4);
+//        rotation(mat);
+//        rotation(mat1);
+//        rotation(mat2);
+//        rotation(mat3);
+//        rotation(mat4);
         rotation(mat5);
     }
 

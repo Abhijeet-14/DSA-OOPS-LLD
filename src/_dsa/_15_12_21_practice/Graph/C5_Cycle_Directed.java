@@ -11,17 +11,22 @@ public class C5_Cycle_Directed {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+        int n = 4;
 
         visited = new boolean[n];
 
         for(int i = 0; i < n; i++)
             V.add(new ArrayList<>());
 
+
+        int eFrom[] = {0,1,3,0};
+        int eTo[] = {1,3,0,2};
+
+        int m = eTo.length;
+
         for(int i = 0; i < m; i++) {
-            int x = sc.nextInt();
-            int y = sc.nextInt();
+            int x = eFrom[i];
+            int y = eTo[i];
 
             V.get(x).add(y);
 
@@ -61,7 +66,7 @@ public class C5_Cycle_Directed {
             if(visited[child] == false) {
                 if(dfsRec(child, parent) == true)
                     return true;
-            } else if(recSt[child] == false)
+            } else if(recSt[child] == true)
                 return true;
         }
 

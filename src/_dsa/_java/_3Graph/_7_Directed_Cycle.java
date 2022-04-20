@@ -84,7 +84,7 @@ public class _7_Directed_Cycle {
 				}
 			}
 			// Does child exist in recursion Stack
-			else if (recSt[child] == false)
+			else if (recSt[child] == true)
 				return true;
 
 		}

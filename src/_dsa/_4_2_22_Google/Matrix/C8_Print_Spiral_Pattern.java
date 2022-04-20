@@ -37,11 +37,11 @@ public class C8_Print_Spiral_Pattern {
         printMatrix(mat5);
 
         System.out.println("TC-O(N*M) - AS-O(N*M)");
-        spiral(mat);
-        spiral(mat1);
-        spiral(mat2);
-        spiral(mat3);
-        spiral(mat4);
+//        spiral(mat);
+//        spiral(mat1);
+//        spiral(mat2);
+//        spiral(mat3);
+//        spiral(mat4);
         spiral(mat5);
     }
 
