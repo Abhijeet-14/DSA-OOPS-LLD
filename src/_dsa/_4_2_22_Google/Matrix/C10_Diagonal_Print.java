@@ -34,7 +34,7 @@ public class C10_Diagonal_Print {
                 {16, 17, 18, 19, 20},
         };
 
-        printMatrix(mat4);
+//        printMatrix(mat4);
 
         diagonal(mat4);
     }

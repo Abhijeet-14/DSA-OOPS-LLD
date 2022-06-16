@@ -6,9 +6,9 @@ import java.util.Set;
 public class C1_Set_Mat_0 {
     public static void main(String[] args) {
         int mat[][] = {{0, 1, 0}, {1, 4, 5}, {1, 1, 1}};
-        sol_1(mat);
-        printMatrix(mat);
-        System.out.println("TC-O(n*m) & SC O(n+m)");
+//        sol_1(mat);
+//        printMatrix(mat);
+//        System.out.println("TC-O(n*m) & SC O(n+m)");
 
         mat = new int[][]{{0, 1, 0}, {1, 4, 5}, {1, 1, 1}};
         sol_2_OPTIMIZE(mat);
@@ -18,7 +18,7 @@ public class C1_Set_Mat_0 {
     }
 
     private static void sol_2_OPTIMIZE(int[][] matrix) {
-        Boolean isCol = false;
+        Boolean isFirstColZero = false;
         int R = matrix.length;
         int C = matrix[0].length;
 
@@ -28,7 +28,7 @@ public class C1_Set_Mat_0 {
             // For this solution we are using an additional variable for the first column
             // and using matrix[0][0] for the first row.
             if(matrix[i][0] == 0) {
-                isCol = true;
+                isFirstColZero = true;
             }
 
             for(int j = 1; j < C; j++) {
@@ -56,7 +56,7 @@ public class C1_Set_Mat_0 {
         }
 
         // See if the first column needs to be set to zero as well
-        if(isCol) {
+        if(isFirstColZero) {
             for(int i = 0; i < R; i++) {
                 matrix[i][0] = 0;
             }

@@ -27,11 +27,11 @@ public class C3_print_boundry_Element {
 //        2) Move elements of last column.
 //        3) Move elements of bottom row.
 //        4) Move elements of first column.
-        boundary(mat);
-        boundary(mat1);
-        boundary(mat2);
-        boundary(mat3);
-        boundary(mat4);
+//        boundary(mat);
+//        boundary(mat1);
+//        boundary(mat2);
+//        boundary(mat3);
+//        boundary(mat4);
         boundary(mat5);
     }
 

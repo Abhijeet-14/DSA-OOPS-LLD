@@ -14,6 +14,8 @@ public class C13_Kth_Smallest_in_BST {
     }
 
     // logic make Inorder Array -> and find k-1 position elemnet
+
+    static int k;
     public static void main(String[] args) {
         Node root = new Node(5);
         root.left = new Node(3);
@@ -22,9 +24,10 @@ public class C13_Kth_Smallest_in_BST {
         root.left.left = new Node(2);
         root.left.right = new Node(4);
 
-        int k = 3;
+        k = 3;
         findKth(root);
-        System.out.println(arr.get(k - 1).data);
+        System.out.println("Solution1: " + arr.get(k - 1).data);
+        findKth_2(root);
     }
 
     static List<Node> arr = new ArrayList<>();
@@ -36,5 +39,17 @@ public class C13_Kth_Smallest_in_BST {
         findKth(root.left);
         arr.add(root);
         findKth(root.right);
+    }
+
+
+    private static void findKth_2(Node root) {
+        if(root == null)
+            return;
+
+        findKth_2(root.left);
+        if(k-1==0)
+            System.out.println("Solution2: " + root.data);
+        k--;
+        findKth_2(root.right);
     }
 }

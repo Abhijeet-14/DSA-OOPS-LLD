@@ -40,9 +40,9 @@ public class C3_Max_Path_Sum_Any_Node_To_Any {
         // Case 4: root
         int N = root.data;
 
-        int mx_1 = Math.max(NL, NR);
+        int mx_L_R = Math.max(NL, NR);
 
-        int mx_at_node = Math.max(mx_1, N);
+        int mx_at_node = Math.max(mx_L_R, N);
 
         int mx_all = Math.max(NLR, mx_at_node);
 

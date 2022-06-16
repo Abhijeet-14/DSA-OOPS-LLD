@@ -3,17 +3,17 @@ package _dsa;
 public class VVI_KeepTruckin_Coding_2 {
     public static void main(String[] args) {
 
-        System.out.println("\nWith finding Pivot O(logN)");
-        solve_method_1_pivot(new int[]{0,1,2,3,4,5}, 5);
-        solve_method_1_pivot(new int[]{10,12,0,2,4,5,6,8}, 6);
-        solve_method_1_pivot(new int[]{2,4,6,7,8,0,1}, 7);
-        solve_method_1_pivot(new int[]{4,5,6,7,0,1,2}, 0);
+//        System.out.println("\nWith finding Pivot O(logN)");
+//        solve_method_1_pivot(new int[]{0,1,2,3,4,5}, 5);
+//        solve_method_1_pivot(new int[]{10,12,0,2,4,5,6,8}, 6);
+//        solve_method_1_pivot(new int[]{2,4,6,7,8,0,1}, 7);
+//        solve_method_1_pivot(new int[]{4,5,6,7,0,1,2}, 0);
 
         System.out.println("\nWithOut Pivot O(logN)");
-        solve_method_2_wo_pivot(new int[]{0,1,2,3,4,5}, 5);
+//        solve_method_2_wo_pivot(new int[]{0,1,2,3,4,5}, 5);
         solve_method_2_wo_pivot(new int[]{10,12,0,2,4,5,6,8}, 6);
-        solve_method_2_wo_pivot(new int[]{2,4,6,7,8,0,1}, 7);
-        solve_method_2_wo_pivot(new int[]{4,5,6,7,0,1,2}, 0);
+//        solve_method_2_wo_pivot(new int[]{2,4,6,7,8,0,1}, 7);
+//        solve_method_2_wo_pivot(new int[]{4,5,6,7,0,1,2}, 0);
     }
 
     private static void solve_method_1_pivot(int[] arr, int X) {
