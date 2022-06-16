@@ -15,7 +15,7 @@ public class C3_RatMaze {
                 {1, 0, 0, 0},
                 {1, 1, 0, 1},
                 {0, 1, 0, 0},
-                {1, 1, 1, 0},
+                {1, 1, 1, 1},
         };
         // 0 - Block & 1 - Go
         // Moves allowed(i,j) - right(i,j+1) & down(i+1,j)
