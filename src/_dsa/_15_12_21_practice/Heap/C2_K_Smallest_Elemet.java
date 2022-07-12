@@ -22,6 +22,7 @@ public class C2_K_Smallest_Elemet {
                 pq.poll();
             }
         }
+        System.out.println(pq);
         return pq.peek();
     }
 }

@@ -2,9 +2,9 @@ package _dsa._15_12_21_practice.Tree_DP;
 
 public class C1_Intro {
     public static void main(String[] args) {
-        // we need to find longest Path in BT. (Diameter, max path sum)
-        // 3 cases, from which we can get longest path.
-        // 1) include root + left+right
+        // we need to find the longest Path in BT. (Diameter, max path sum)
+        // 3 cases, from which we can get the longest path.
+        // 1) include root + left + right
         // 2) right only
         // 3) left only
         //

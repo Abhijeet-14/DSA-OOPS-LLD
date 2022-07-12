@@ -39,12 +39,12 @@ public class C2_diameter_of_tree {
         // root + left + right
         int left_H = height(root.left);
         int right_H = height(root.right);
-        int new_D = 1 + left_H + right_H;
+        int node_D = 1 + left_H + right_H;
 
         int left_D = solve_rec(root.left);
         int right_D = solve_rec(root.right);
 
-        return Math.max(new_D, Math.max(left_D, right_D));
+        return Math.max(node_D, Math.max(left_D, right_D));
     }
 
     private static int height(Node root) {
