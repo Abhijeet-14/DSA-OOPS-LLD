@@ -1,0 +1,5 @@
+-- Candidate Key: unique field, can have NULL   
+-- Super key: unique field, can have NULL, it is a sinle of group of undiqe row in table 
+-- Primary Key: field with UNIQUE values, and Can NOT NULL.
+-- Alternate key: candidate key other than Primary Key
+-- Foreign Key: primary key of another table mapped to this table.
