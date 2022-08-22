@@ -1,4 +1,4 @@
-package _dsa;
+package ___KT_C3;
 
 public class VVI_KeepTruckin_Coding_2 {
     public static void main(String[] args) {
