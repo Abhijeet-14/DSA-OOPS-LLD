@@ -91,14 +91,14 @@ public class VVI_KeepTruckin_Coding_2 {
             }
 
 
-            else if(arr[mid]>=arr[left]){
-                if(arr[left]<=x && arr[mid]>= x)//4567
+            else if(arr[mid]>=arr[left]){ // Is BS?
+                if(arr[left]<=x && arr[mid]>= x)
                     right = mid-1;
                 else
                     left = mid+1;
             }
-            else if(arr[mid]<=arr[right]){
-                if(arr[right]>=x && arr[mid]<= x)//4567801
+            else if(arr[mid]<=arr[right]){ // Is BS?
+                if(arr[right]>=x && arr[mid]<= x) // if fall in [mid, right]
                     left = mid+1;
                 else
                     right = mid-1;

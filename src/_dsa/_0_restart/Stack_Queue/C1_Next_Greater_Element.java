@@ -17,7 +17,40 @@ public class C1_Next_Greater_Element {
         // travel the arr 1 time.
         // and put element index to STACK - if peek > current
         // else pop peek -> and put current value to peek value index.
-        optimize(arr, nGec, len);
+//        optimize(arr, nGec, len);
+
+        optimize_reverse_loop(arr, nGec, len);
+    }
+
+    private static void optimize_reverse_loop(int[] arr, int[] nGec, int len) {
+        Stack<Integer> s = new Stack<>();
+
+        for(int i = len-1; i>=0;i--){
+            int curr = arr[i];
+
+            if(s.isEmpty()){
+                nGec[i] = -1;
+                s.add(curr);
+            }
+            else {
+                if(curr <= s.peek()){
+                    nGec[i] = s.peek();
+                    s.add(curr);
+                }
+                else {
+                    while(!s.isEmpty() && curr > s.peek())
+                        s.pop();
+                    if(s.isEmpty())
+                        nGec[i] = -1;
+                    else
+                        nGec[i] = s.peek();
+
+                    s.add(curr);
+                }
+            }
+        }
+
+        printArr(nGec);
     }
 
     private static void optimize(int arr[], int nGec[], int len){
@@ -40,6 +73,10 @@ public class C1_Next_Greater_Element {
         while(!s.isEmpty())
             nGec[s.pop()] = -1;
 
+        printArr(nGec);
+    }
+
+    public static void printArr(int nGec[]){
         System.out.print("[ ");
         for(int val: nGec)
             System.out.print(val + ", ");

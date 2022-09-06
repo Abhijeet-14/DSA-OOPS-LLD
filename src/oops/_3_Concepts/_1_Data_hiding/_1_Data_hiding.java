@@ -9,7 +9,7 @@ public class _1_Data_hiding {
         BankAccount ba = new BankAccount();
         ba.details();
         System.out.println("Error, if we try to access class variable");
-//        System.out.println(ba.username);
+//        System.out.println(ba.username); throw error as it is private
     }
 
 }
