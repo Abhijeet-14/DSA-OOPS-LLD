@@ -1,7 +1,7 @@
 package oops._3_Concepts._4_interface;
 
 /*
-    Interface is blue print of classes,
+    Interface is blueprint of classes,
     specifies what class MUST do(not how).
     - only have method declaration
     - all method are abstract

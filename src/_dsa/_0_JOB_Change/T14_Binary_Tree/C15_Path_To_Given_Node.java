@@ -14,7 +14,6 @@ public class C15_Path_To_Given_Node {
         System.out.println("Result: " + res);
     }
 
-    static boolean is_there = false;
     static String ans = "";
     public static String pathToGivenNode(TreeNode root) {
 

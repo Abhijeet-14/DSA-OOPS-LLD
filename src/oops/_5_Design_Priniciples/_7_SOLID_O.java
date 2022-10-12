@@ -3,8 +3,8 @@ package oops._5_Design_Priniciples;
 /*
     O - Open Closed Principle
         - it states...
-            entities(classes, module, function etc) should be open
-            for EXTENSION BUT closed for MODIFICATION
+            entities(classes, module, function etc) should be
+            'open for EXTENSION' BUT 'closed for MODIFICATION'
 
 
         - assume a class CalculateArea{}..

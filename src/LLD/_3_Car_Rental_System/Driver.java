@@ -10,7 +10,7 @@ import LLD._3_Car_Rental_System.model.VehicleType;
 import LLD._3_Car_Rental_System.service.StationService;
 import LLD._3_Car_Rental_System.service.UserService;
 
-public class Driver {
+public class  Driver {
     public static void main(String[] args) {
         // Initiate DB
         new DB();

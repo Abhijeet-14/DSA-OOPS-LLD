@@ -39,7 +39,6 @@ public class BFS {
         while(!q.isEmpty()){
             int curr = q.poll();
 
-
             List<Integer> currV = V.get(curr);
 
             System.out.print(curr + " -> ");

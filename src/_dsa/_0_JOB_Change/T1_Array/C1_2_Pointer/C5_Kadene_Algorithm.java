@@ -2,9 +2,9 @@ package _dsa._0_JOB_Change.T1_Array.C1_2_Pointer;
 
 public class C5_Kadene_Algorithm {
     public static void main(String[] args) {
-        // int arr[] = {-5,4,6,-3,4,-1};
+         int arr[] = {-5,4,6,-3,4,-1};
         // all negative
-        int arr[] = {-10,-10,-10};
+//        int arr[] = {-10,-10,-10};
 
         int ans_brute_force = solve_brute_force(arr);
         System.out.println("Brute_Force: " + ans_brute_force);

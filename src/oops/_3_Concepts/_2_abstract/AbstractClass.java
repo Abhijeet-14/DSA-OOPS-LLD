@@ -3,7 +3,7 @@ package oops._3_Concepts._2_abstract;
 /*
     hiding internal implementation
         Abstract class are with INCOMPLETE implementation
-        - cam have abstract and normal method
+        - can have abstract and normal method
         - can not create object
  */
 public abstract class AbstractClass {

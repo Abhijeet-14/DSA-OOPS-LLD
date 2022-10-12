@@ -15,7 +15,7 @@ public class _1_Data_hiding {
 }
 
 class BankAccount {
-    // this can't be access by any where - Data Hiding
+    // this can't be access by anywhere - Data Hiding
     private double balance = 1000;
     private String username = "Adam";
     private String password = "123";
