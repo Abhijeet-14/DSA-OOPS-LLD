@@ -1,24 +1,10 @@
-d = {
-    '1': 'Dhoni',
-    '2': 'Dravid',
-    '3': 'sachin'
-}
+# char to int
+char = 'A'
 
-print('\nDictionary loop over key & values')
+integer_value_of_characterstring_of_digits = ord(char)
+print(string_of_digits)
 
-for key, value in d.items():
-    print(key, value)
+string_of_digits = "123"
 
-
-# d.items gives array of [.., tuple(key, value), ..]
-print(d.items())
-
-
-print('\nStore to a key')
-dict = {}
-
-for i in range(1,6):
-    dict[i] = i*i
-
-for k, v in dict.items():
-    print(k, v)
+integer_value = int(string_of_digits)
+print(integer_value)
