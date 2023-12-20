@@ -1,4 +1,9 @@
 # Create a 2D list
+rorow = 4
+col = 5
+
+mat = [[0]*ccorowrow
+
 matrix = [
     [1, 2, 3],
     [4, 5, 6],
