@@ -2,7 +2,7 @@
 rorow = 4
 col = 5
 
-mat = [[0]*ccorowrow
+mat = [[0]*col]*row
 
 matrix = [
     [1, 2, 3],
