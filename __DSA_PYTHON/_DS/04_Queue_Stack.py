@@ -1,7 +1,7 @@
 ##### SINGLE END QUEUE ######
 from queue import Queue
 
-print("========= QUEUE =========")
+print("\n========= QUEUE =========")
 
 my_queue = Queue()
 
@@ -27,7 +27,7 @@ print(my_queue.qsize())  # o/p - 2
 
 
 ##### STACK ######
-print("========= STACK =========")
+print("\n========= STACK =========")
 stack = []
 stack.append(2)
 stack.append(5)
@@ -39,7 +39,7 @@ print("Pop: ", stack.pop())
 print("Is_Empty: ", not bool(stack), len(stack) > 0)
 
 ##### DOUBLE END QUEUE ######
-print("========= DOUBLE END QUEUE =========")
+print("\n========= DOUBLE END QUEUE =========")
 from collections import deque
 
 my_deque = deque()
@@ -57,3 +57,37 @@ my_deque.pop()
 
 # pop-left
 my_deque.popleft()
+
+
+print("\n========= Next Greater From Right =========")
+
+
+def next_greater_from_right(arr):
+    length = len(arr)
+    stack = []
+    res = [-1] * length
+
+    for idx in range(0, length):
+        i = length - idx - 1
+        curr = arr[i]
+        if len(stack) == 0:
+            res[i] = -1
+
+        elif curr <= stack[-1]:
+            res[i] = stack[-1]
+        else:
+            while len(stack) != 0 and curr > stack[-1]:
+                stack.pop()
+
+            if len(stack) == 0:
+                res[i] = -1
+            else:
+                res[i] = stack[-1]
+
+        stack.append(curr)
+    print(res)
+    return res
+
+
+arr = [5, 6, 4, 21, 2]
+next_greater_from_right(arr)

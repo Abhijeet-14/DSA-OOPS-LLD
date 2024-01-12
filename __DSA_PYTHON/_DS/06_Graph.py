@@ -85,3 +85,107 @@ def dfs(source):
 
 
 dfs(0)
+
+
+print("\n============ Dijkstra - Without Weight ============")
+visited = visited_node(5)
+
+
+def dfs(source):
+    visited[source] = True
+
+    parent = graph.get(source)
+    print(source, end=" -> ")
+
+    for child in parent:
+        if visited[child] == False:
+            dfs(child)
+
+
+dfs(0)
+
+
+print("\n============ Dijkstra - with Weight ============")
+graph = {}
+
+
+class Node:
+    def __init__(self, to, wt):
+        self.to = to
+        self.wt = wt
+
+    def __lt__(self, other):
+        return self.wt < other.wt
+
+
+def add_edge(node_1, node_2, wt):
+    if node_1 in graph:
+        graph[node_1].append(Node(node_2, wt))
+    else:
+        graph[node_1] = [Node(node_2, wt)]
+
+    # bi-direction
+    if node_2 in graph:
+        graph[node_2].append(Node(node_1, wt))
+    else:
+        graph[node_2] = [Node(node_1, wt)]
+
+
+add_edge(0, 1, 4)
+add_edge(1, 2, 8)
+add_edge(2, 3, 7)
+add_edge(3, 4, 1)
+add_edge(4, 5, 10)
+add_edge(5, 6, 2)
+add_edge(6, 7, 1)
+add_edge(7, 0, 8)
+add_edge(7, 1, 11)
+add_edge(8, 7, 7)
+add_edge(8, 6, 6)
+add_edge(8, 2, 2)
+add_edge(5, 2, 4)
+add_edge(5, 3, 14)
+
+
+def print_graph(graph):
+    for node in graph:
+        print(f"{node}", end=": ")
+        for child in graph[node]:
+            print(f"{child.to} ({child.wt})", end=", ")
+        print()
+
+
+print_graph(graph)
+
+
+import heapq
+
+
+def shortest_path(n):
+    return [float("inf")] * n
+
+
+shortest_path = shortest_path(9)
+
+
+def dijkstra_w(source):
+    heap = []
+
+    heapq.heappush(heap, Node(source, 0))
+    shortest_path[source] = 0
+
+    while len(heap) > 0:
+        parent_idx = heap[0]
+        parent = graph.get(parent_idx.to)
+        heapq.heappop(heap)
+
+        for child in parent:
+            if shortest_path[parent_idx.to] + child.wt < shortest_path[child.to]:
+                shortest_path[child.to] = shortest_path[parent_idx.to] + child.wt
+                heapq.heappush(
+                    heap, Node(child.to, shortest_path[parent_idx.to] + child.wt)
+                )
+
+
+dijkstra_w(0)
+print("\nShortest Path: ", shortest_path)
