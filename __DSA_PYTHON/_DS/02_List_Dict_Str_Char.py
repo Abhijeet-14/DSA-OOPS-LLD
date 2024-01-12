@@ -13,6 +13,12 @@ print("\tLength => ", len(arr_1))
 for i in range(len(arr_2)):
     print(f"\tBy Index {i}:", arr_2[i])
 
+print("\n========== 2D-LIST ==========")
+col = 3
+row = 4
+arr_1 = [[0] * col] * row
+
+
 print("\n========== String ==========")
 string = "ab"
 print("\tLength => ", len(string))
