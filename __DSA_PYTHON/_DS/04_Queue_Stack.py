@@ -15,7 +15,7 @@ print("QUEUE list: ", my_queue.queue)  # o/p - [1,2,3]
 
 print("Peek: ", my_queue.queue[0])  # o/p - 1
 
-# To pop - FIFO -- .get() or pop(0)
+# To pop - FIFO -- .get()
 element = my_queue.get()
 print("Dequeued element:", element)
 
@@ -24,9 +24,6 @@ print(my_queue.empty())  # o/p - False
 
 # q-size
 print(my_queue.qsize())  # o/p - 2
-
-element = my_queue.pop(0)
-print(element)  # o/p - 2
 
 
 ##### STACK ######
