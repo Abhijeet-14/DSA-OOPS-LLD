@@ -87,24 +87,6 @@ def dfs(source):
 dfs(0)
 
 
-print("\n============ Dijkstra - Without Weight ============")
-visited = visited_node(5)
-
-
-def dfs(source):
-    visited[source] = True
-
-    parent = graph.get(source)
-    print(source, end=" -> ")
-
-    for child in parent:
-        if visited[child] == False:
-            dfs(child)
-
-
-dfs(0)
-
-
 print("\n============ Dijkstra - with Weight ============")
 graph = {}
 
@@ -189,3 +171,8 @@ def dijkstra_w(source):
 
 dijkstra_w(0)
 print("\nShortest Path: ", shortest_path)
+
+
+print("\n============ Cycle ============")
+print("\n============ UnCycle ============")
+print("\n============ Topological ============")
