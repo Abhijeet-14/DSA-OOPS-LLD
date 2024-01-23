@@ -7,6 +7,7 @@ print(arr_1)
 
 print("List Repetation: ", arr_1 * 2)
 
+
 # Copy List and mutated
 arr_2 = [val * val for val in arr_1]
 print("Copy List & Mutated: ", arr_2)
