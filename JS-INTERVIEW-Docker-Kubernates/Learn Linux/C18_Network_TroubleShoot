@@ -1,0 +1,53 @@
+# NETWORK TroubleShooting:
+    - ping
+    - traceroute/tracepath
+    - netstat
+    - tcpdump
+    - telnet
+
+
+# Testing Connectivity:
+    - ping HOST
+    - ping -c 3 HOST
+        => 3 packet, 3 reveived, 0% packet loss
+
+    ## if we can 'ping by ip' & but not by 'hostname' -> problem with DNS resolution
+        -> error in ping google.com
+        -> step1: ping  on_local_network    :: if error :: host network issue
+        -> step2: if success issue with ISP router - may be not able to ping public Ip
+        -> Step 3: try other public host yt.com, fb.com
+        -> if sucess means only issue with google.com
+
+
+# Traceroute
+    - traceroute - doesn't tell anything about route the packet takes.
+
+    - traceroute google.com
+    - traceroute -n google.com
+
+# tracepath
+    - tracepath google.com
+    - tracepath -n google.com
+
+# netstat
+    -n : display numric address & ports
+    -i : display list of network interface
+    -r : display route table            :: netstat -rn
+    -p : display PID                    
+    -l : listening sockets              :: netstat -nlp
+    -t : limit o/p tp TCP               :: netstat -ntlp
+    -u : limit o/p tp UDP               :: netstat -nulp
+     
+
+     e.g.,
+        - netstat -i
+        - netstat -rn   :: route table
+        - netstat -ntlp
+        - netstat -nulp
+
+# TELNET:
+
+    - earlier telnet used for Remote connection..
+    - now 'ssh' remove 'telnet'
+
+    - telnet can used for network connection

@@ -1,0 +1,39 @@
+# Process & Job Control
+    - ps :: display running process status
+        - '-e'           :: all process
+            > ps -e
+            > ps -eH            :: Display process tree
+            > ps -e --forest    :: Display process tree
+
+        - '-f'           :: Full format listing
+            > ps -fp 153
+
+        - '-u username'  :: Display username's process 
+            > ps -u adminuser
+
+        - '-p pid'       :: Display information for PID
+            > ps -p 153
+
+    
+    - pstree    :: display process in a tree format
+    - top       :: Interactive process viewer
+
+# Background & ForeGround Process
+    - cmd &     :: start command in backgroud
+        > ./vscode &
+            => [1] 2480     :: [Job_Number] PID
+    - ctrl-C    :: kill the foreground process 
+                    - kill :: die of process
+    - ctrl-Z    :: Suspend the foreground process 
+                    - suspend :: STOP, still in memory to start again
+
+    - bg [%job_num] :: push process to backgroud
+    - fg [%job_num] :: bring process to foregroud
+    - jobs [%job_num] :: list jobs
+    - kill [%job_num] :: kill by jobnum
+
+# Killing Process
+    - ctrl+C
+    - kill [-sig] pid   :: send SIGNAL to process
+    - kill -l           :: Display list of signal
+

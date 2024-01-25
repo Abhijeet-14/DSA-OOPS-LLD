@@ -1,0 +1,96 @@
+# Finding Files & Directory
+    - find [path...] [expression]
+            :: recursively finds files in path that match expression
+            :: find files in real time
+
+    - '-name'  : find files by like name
+    - '-iname' : like name, but ignore case
+    - '-mtime' days : find files that are days old
+    - '-size' num   : files of size num
+    - '-newer' file : files newer than this file
+    - '-type' file : files newer than this file
+    e.g,
+        - find . -name test.txt
+        - find . -iname tEst.txt
+        - find . -iname *tv
+        - find . -iname *.txt
+        - find . -mtime +10 -mtime -13 :: > 10 days old & < 13 days old
+        - find . -size +1M :: file > 1Mb
+        - find . -newer test.txt
+
+    - 'locate' : list files that match patter
+            - faster than find command
+            - Queris an index
+            - it didn't search in real-time :: new file won't be searched until its index created
+        e.g., 
+        - locate test.txt :: all files mathcing this pattern
+        - locate test.t :: all files matching this pattern.. like test.txt
+        
+
+# Display files
+    - cat file  : display file content of file
+    - more file : Browse thro a text file
+    - less file : more feature than more
+    - head file : o/p beginning portion :: only first 10 lines
+    - tail file : /p ending portion :: only last 10 lines
+
+    e.g.,
+        - tail -3 file :: display only last 3 lines
+        - head -5 file :: display only first 5 lines
+
+    - tail -f file :: view file in real time.. as its change 
+        - e.g., log file, this will help in seeing new log content as its change
+
+# Nano Editor
+    - simple editor NOT powerful as VIM
+
+# VIM:
+    - powerful editor
+    - it has 3 mode: command mode, insert mode, line mode
+    - view file :: read-only file
+
+
+# Deleting, Copying, Moving & Renaming files
+    ## REMOVE
+    - rm file       : remove file
+    - rm -r dir     : remove dir and its content recursively
+    - rm -f file    : force remove
+    
+    ## COPY
+    - cp source_file dest_file
+    - cp -i source_file dest_file :: do in INTERACTIVE mode
+    - cp source_file1 source_file2 dest_dir
+    - cp -r source_file1 source_file2 dest_dir :: if dest_dir  doesn't exist, it will create one.
+
+    ## MOVE
+    - mv :: MOVE or RENAME file or dir
+    - mv SRC DEST
+    - mv -i SRC DEST :: do in INTERACTIVE mode
+
+
+# TAR: Collection of Files
+    - tar c|x|t f tarfile [pattern]
+        - c : create
+        - x : extract
+        - t : display list
+        - v : verbose
+        - z : compress
+        - f : use this file
+
+        e.g., 
+            - tar cf test.tar *.txt :: create tar file with all .txt file
+            - tar tf test.tar :: diplay content of test.tar
+            - tar xf test.tar 
+            - tar gzip compress files
+    - gzip   :: compress
+        - gzip test.txt
+    - gunzip :: uncompress
+        - gunzip test.txt.gz
+    - gzcat  :: concatenate compressed file
+    - zcat   :: concatenate compressed file
+        - zcat test.txt.gz
+
+    ## Disk Usage
+    - du    : estimate file usage
+    - du -k : display size KB
+    - du -h : display in Human Readable format

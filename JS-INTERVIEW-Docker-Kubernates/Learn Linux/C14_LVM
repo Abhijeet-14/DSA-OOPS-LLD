@@ -1,0 +1,25 @@
+# Logical Volume Manager
+    - Logical Volume Manager
+
+# Flexible Capacity
+    - you can create file sys that extend across multiple devices.
+
+    - multiple storage device into single Logical Volume
+
+    - Exnted & shrink in Real Time.
+
+# Data Mirror
+    - increase fault tolerance & reliability
+    - can create more than 1 copy of other device
+
+    - replica
+
+# Snapshot:
+    - create point-in-time snapshot of your filesystems.
+
+# LVM abstraction:
+    - LVM add level of adstraction
+    -   Logical Volume
+        Volume Group
+        Physical Volume
+        Storage Devices

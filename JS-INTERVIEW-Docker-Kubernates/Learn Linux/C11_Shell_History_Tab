@@ -1,0 +1,6 @@
+# SHELL HISTORY & TAB
+    - executed cmd are added to history
+    - shell history store in memory and on disk
+        - ~/.bash_history
+        - ~/.history
+        - ~/.histfile

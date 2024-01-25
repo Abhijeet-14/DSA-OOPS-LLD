@@ -1,0 +1,32 @@
+# Common Directories
+    - /     - "Root", top of file system heirarchy
+    - /bin  - binaries and other executable programs
+    - /etc  - System configuration files
+    - /home - Home directories
+    - /opt  - Optional or Thrid party software
+    - /tmp  - Temporary space, typically cleared on reboot
+    - /usr  - User related programs
+    - /var  - Variable data, most notably log files
+
+# Application Directory Structure:
+    - /usr/local/<App_Name>/bin
+    - /usr/local/<App_Name>/etc
+    - /usr/local/<App_Name>/lib
+    - /usr/local/<App_Name>/log
+    - and other structures
+
+# SHELL
+    - default interface for Linux. (UI of linux)
+    - program that accepts your commands & exectues those command
+    ## CLI VS GUI
+        - CLI is more powerful
+        - like, rename of 100 files
+
+# Prompt
+    - [abj@localhost ~] $           - abj is normal account
+    - [root@localhost ~] #          - root is superuser
+    ## ROOT
+        - root is powerful
+        - normal account only do few things compare to root
+        - root generally do system administrators job.
+        - root, generally install, start, stop of an application

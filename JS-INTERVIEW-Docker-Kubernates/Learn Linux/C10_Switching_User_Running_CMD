@@ -1,0 +1,17 @@
+# SUDO
+    - sudo :: execute cmd as another user, SUPERUSER
+    
+    - sudo -l
+    - sudo cmd
+    - sudo -u root cmd
+    - sudo -u USER cmd
+
+    - sudo su                   :: switch to superuser
+    - sudo su -                 :: switch to SUPERUSER acc with root's env.
+    - sudo su - username        :: switch to username account
+
+    - sudo -s       :: start a shell
+    - sudo -u root -s
+    - sudo -u user -s
+
+

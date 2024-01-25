@@ -1,0 +1,53 @@
+# Transfering & Copying file over NETWORk
+    - Transfering & Copying file over NETWORk
+
+# Connecting Over NETWORK
+    - SSH
+    - windows-PuTTY
+
+# Copy FIles over NETWORK
+    - SCP :: secure copy
+        -> CLI:
+            - scp src dest    :: copy src to dest
+
+    - SFTP  :: SSH file transfer protocol
+        -> CLI:
+            - sftp host             :: secure file transfer session with host
+            
+            - sftp adminuser@host   :: 
+            
+            - ftp host             ::  file transfer session with host
+
+            - put
+                - put z.txt     :: put to remote server
+                - rm z.txt     :: delte to remote server
+
+## TO connect we need CLient - Windows -> PuTTY
+    - to connect to linux server from Window we need PuTTY
+
+
+# Customize Shell Prompt:
+    - Didn't understand
+
+# Shell Alias
+    - short cut for commands
+        e.g., for ls -l => ll
+    - create:
+        > alias ll='ls -l'
+    - remove
+        > unalias NAME
+        > unalias -a    :: remove all alias
+
+
+# ENVIRONMENT VARIABLE
+
+    - CREATE
+        - export NEW_VAR="value"
+
+    - REMOVE
+        - unset NEW_VAR
+        
+    - VIEW ENV VAR
+        - printenv        :: display all env
+        - printenv HOME
+        - echo $PATH

@@ -1,0 +1,9 @@
+# CN questions:
+    - https://www.geeksforgeeks.org/top-50-computer-networking-interview-questions-and-answers/
+
+# VPC:
+    VPC, is a public-cloud offering a private-cloud like environment, by limiting Ip's
+        e.g., ip range 10.2.0.0/16 -> only 2^16 Ip from 10.2.0.0 - 10.2.255.255
+        
+    - Subnet, is a range of IP addresses in your VPC. 1 subnet -> 1 zone
+

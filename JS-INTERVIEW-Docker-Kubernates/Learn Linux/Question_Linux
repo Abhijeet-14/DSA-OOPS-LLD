@@ -1,0 +1,60 @@
+# Questions Linus:
+- ## What is Linux?
+  - Linux is an OS
+  - overall package of Linux Distro = OS
+  - similar to Windows 
+
+- ## Components of Linux?
+  - Kernel
+  - the shell
+  - Applications
+  - Desktop Environment
+  - bootloader
+
+- ## 1. diff b/w apt & apt-get
+  - apt-get : is considered as back-end level, used for system interaction
+  - apt : is for end-users(human)
+    apt = apt-get + apt-cache
+
+- ## 2. Display all lines, who DOESN'T start with '#'
+    cat f1 | grep -vi ^#
+
+
+- ## 3. Schedule a server reboot in  15 min
+  - shutdown -r +15
+  - shutdown -r now     :: to reboot now
+  - shutdown -r 23:11     :: at specific time
+
+- ## 4. Continous monitoring
+  - tail -f /abc/logs
+
+- ## 5. print only 10th line of file:
+  - head -10 file.txt | tail -1
+      :: head -10 - will give first 10 line
+      :: tail -1 - will only print last of 10 line, 10th line
+
+- ## 6. How long system is UP?
+  - uptime    :: this will tell you!
+
+- ## 7. How to check if a PORT is listening?
+  - netstat -anp | grep 22
+        :: -a - all
+        :: -n - numeric
+        :: -p - program
+
+- ## 8. Find a file > 10MB in size?
+  - find ./usr -size +10M
+
+
+- ## 9. display file contain number
+  - cat f1 | grep [0-9]
+
+- ## 10. Advantage of Linux
+  - free
+  - freedom
+  - speed
+  - privacy
+  - security
+
+
+  

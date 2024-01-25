@@ -1,0 +1,49 @@
+# Searching
+    - use 'grep' command
+
+# grep COMMAND
+    - grep pattern file
+        -> -i : ignore case
+        -> -c : count occurence
+        -> -n : show matching line with line-no.
+        -> -v : non-matching line
+
+            - grep -vi ^# test.txt  :: display all line, not start with '#'
+        e.g., 
+            - grep file test.txt        :: display matching line 
+            - grep -i File test.txt     :: display matching line with 'file' & 'File'
+            - grep -ci File test.txt    :: count 
+            - grep -ni File test.txt    :: line no & matching line
+            - grep -vi File test.txt    :: non-matching line
+
+- ## PIPE
+    - cmd o/p | cmd i/p
+
+    e.g.,
+        - cat file.txt | grep -i hello
+- ## CUT Delimiter
+    - cut file
+        - -d CHAR    ::    'CHAR' used as field to SEPARATOR : e.g., -d: -> ':' separate on this char
+
+        - -f N       ::    Display Nth field
+
+- ## Display BINARY file
+    - cat file.txt      ::  Display in bytes
+    - string file.txt   :: display content in Human-Readble format
+
+# Example:
+    Q:> find all user named 'bob' in etc/passwd
+        - grep bob etc/passwd
+
+    Q:> Print account name & Real Name
+        - grep bob etc/passwd | cut d: -f1,5
+
+    Q:> Print in ALphabetical Order by account name
+        - grep bob etc/passwd | cut d: -f1,5 | sort
+
+        - grep bob etc/passwd | cut d: -f1,5 | sort | tr ":" " " 
+            -> tr ":" " "  :: translate : char to space char
+
+    Q:> Print in tabular format
+        - grep bob etc/passwd | cut d: -f1,5 | sort | tr ":" " " | column -t 
+            -> column -t    :: -t means table & column

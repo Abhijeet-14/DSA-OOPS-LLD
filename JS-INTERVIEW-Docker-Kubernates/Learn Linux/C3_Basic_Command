@@ -1,0 +1,112 @@
+## In linux command & file & directories are "case-sensitive"
+
+# Basic Linux Commands [Case-Sensitive]
+
+    - ls    :
+    - cd    :
+    - pwd   :
+    - cat   : concatenates & display files
+    - echo  : diplay arguments to screen
+    - man   : documentaion -> e.g, > man ls
+    - exit  :
+    - clear :
+    - ls -l -a :: all files
+
+    ## HELP COMMANDS
+    - man ls
+    - ls -h
+    - which cat
+
+- ## Environment Varibles
+
+  - store location that has Name & value
+  - UPPERCASE
+  - acces by > echo $VAR_NAME
+- ## Directory
+
+  - container for other files & directories
+  - .    : current dir
+  - ..   : parent dir
+  - cd - : change to previous directory
+
+  - $OLDPWD : previous directory
+
+  - mkdir [-p] : create dir
+  - rmdir [-p] : remove dir
+  - rm -rf     : recursively removes die
+- ## Listing Files
+
+  - ls -l : long listing
+  - ls -a : all files
+  - ls -l -a
+  - ls -F : tell filte types
+  - / Dir
+  - @ Link : points to actual file or dir, use to create a shortcut
+  - e.g., ls -l -F bin
+  bin -> /usr/bin
+  - * executable
+
+  - ls -t : list files by time
+  - ls -r : reverse order
+  - ls -R : list all dir, current as well as sub-dir
+
+# Files & DIR PERMISSION
+
+    - ls -l
+        - -rw-rw-r-- 1 abj users 10300 Sep 18 08:52 text.txt
+
+    Symbol   :::  Permission
+        -  r        -    Read
+        -  w        -    write
+        -  x        -    Execute
+
+    - Permission Category
+        Symbol    Permission
+            u   -   User
+            g   -   Group
+            o   -   Other
+            a   -   all
+    - "-rw-r--r--
+        1 '-' : is file type e.g., 'd', 'l'
+        2 'rw-' : USER
+        3 'r--' : GROUP
+        4 'r--' : Other
+
+    ## Changin Permission
+     - chmod   : change mode command
+     - ugoa    : user category -> user, group, other, all
+     - +-=     : Add, Substract or set permission
+     - rwx     : read, write, execute
+
+    > chmod g+w test.txt
+     > chmod a+rw test.txt
+     > chmod o-x test.txt
+     > chmod u=rw test.txt
+     > chmod o= test.txt  :: removes all permission
+
+    - NUMERIC PERMISSION
+        r - 4
+        w - 2
+        x - 1
+        so,
+         rwx = 7
+         rw- = 6
+         r-x = 5
+         r-- = 4
+         -wx = 3
+         -w- = 2
+         --x = 1
+         --- = 0
+
+    - 777 -> rwxrwxrwx
+        - 776 -> rwxrwxrw-
+        - 746 -> rwxr--rw-
+
+    ## Change Group
+        - groups :: list all groups
+        - chgrp GRP_1 test.txt
+
+# Touch
+
+    - touch a.txt
+    - it create a new file or update the timestamp

@@ -1,0 +1,64 @@
+# Networking
+    - TCP/IP
+    - Classful networks
+    - subnet masks
+    - Broadcast address
+    - CIDR
+    - private address space
+
+# TCP/IP
+    - used for network communication
+    
+    - TCP - control data exchange
+    - IP - send data from 1 device to another device
+    - Hosts:
+        - device on network that have IP add.
+
+# IP networking
+    - for a device to comm, we need:
+        - IP add
+            - 199.83.131.186
+        - subnet mask
+            - 255.255.255.0
+        - broadcast add
+            - 199.83.131.255
+
+    - Network Add - what Ip host belong to & what IP data to deliverd
+
+    - Host Add - specific device data should be deliver
+
+# Classful Network:
+    class         Network         Hostallowed
+    - A         1.0 -> 127.0         16M
+    - B         128.0 -> 191.255     65k
+    - C         192.0 -> 233.255     255
+
+# Subnet mast
+    - A - 255.0.0.0       :: 1 network add & 3 host add
+    - B - 255.255.0.0     :: 2 network add & 2 host add
+    - C - 255.255.255.0   :: 3 network add & 1 host add
+        e.g., 183.194.46.31
+                => class B
+                => network add '183.194'
+                => host add '46.31'
+
+# BroadCast Network
+            Network       subnet          Broadcast
+    - A     17.0.0.0     255.0.0.0       17.255.255.255
+    - B   183.194.0.0    255.255.0.0     183.194.255.255
+    - C   199.83.131.0   255.255.255.0   199.83.131.255
+
+
+# CIDR - Classless Inter-Domain Routing
+    - IP: 127.67.198.94
+        - class A netowrk: 121.0.0.0
+        - class A subnet: 255.0.0.0
+        - class A broadCast: 121.255.255.255
+
+    - this IP belong to class A, but CIDR can make it to any class 
+
+    - IP: 127.67.198.94 subnet: 255.255.255.0
+        - ip class A + subnet class C 
+        - CIDR network: 127.67.198.0
+        - CIDR subnet: 255.255.255.0
+        - CIDR broadcast: 121.67.198.255

@@ -1,0 +1,62 @@
+# Docker Question:
+
+# Hypervisor?
+    - A hypervisor is a software that makes virtualization possible. It is also called Virtual Machine Monitor. 
+    - It divides the host system and allocates the resources to each divided virtual environment.
+
+# Docker image?
+    - snapshot of complete application environment
+
+# Docker Hub?
+    - place where all Docker images live, registry.
+
+# Docker Architectur?
+    - Client => Rest API => server
+
+# Dockerfile?
+    - Instruction to package up application & its complete environment.
+
+# LifeCycle of Docker Container:
+    - Create a container
+    - Run the container
+    - Pause the container(optional)
+    - Un-pause the container(optional)
+    - Start the container
+    - Stop the container
+    - Restart the container
+    - Kill the container
+    - Destroy the container
+
+
+# ADVANCE:
+
+# Will you lose your data, when a docker container exists?
+    - No, you won’t lose any data when Docker container exits. 
+
+#  How far do Docker containers scale? Are there any requirements for the same?
+    - Containers can be scaled to hundreds of thousands or even millions of them running in parallel.
+
+# Can you remove a paused container from Docker?
+    - NO, only stoped
+
+# Can a container restart by itself?
+    - NO
+
+# How many containers can run per host?
+    - Many
+
+# Docker Repository ?
+    - it is the collection of Docker images that are related. 
+
+# EKS
+    - elastic kuberates service
+    - eks - start, run, and scale Kubernetes. 
+
+# ECR
+    - elastic Container registry
+    - ECR, Easily store, share, and deploy your container.
+
+# Scalability and Elasticity:
+    - scalbility - adding resource
+    - Elasticity - increare/decreasing resource dynamically as per traffic
+    

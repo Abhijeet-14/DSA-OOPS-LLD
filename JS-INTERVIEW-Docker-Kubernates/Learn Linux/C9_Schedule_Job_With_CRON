@@ -1,0 +1,47 @@
+# Scheduling Repeated Jobs with CRON
+    - Scheduling Repeated Jobs with CRON
+
+# CRON
+    - cron - a time based job scheduling service
+    - crontab - A program that create, read, update, delte your JOB schedules
+    - use cron to schedule & automate tasks.
+
+# CronTab Format
+    - * *   *   *   *
+                    (0-6 weekday)
+                (1-12, month)
+            (1-31, monthday)
+        (0-23, Hour)
+     (0-59, minute)
+
+     e.g., 
+        ## run every monday(1) at 07:00(7)
+        -  0 7 * * 1 /opt/bin/weekly-report
+
+        ## run daily at 02:00
+        - 0 2 * * * /root/backupdb > /tmp/db.log 2>&1
+
+        ## run every 15 mins
+        - */15 * * * *
+
+        ## run for first 5 min of every hour
+        - 0-4 * * * *
+
+# Crontab Command
+    - crontab file      :: install a new crontab from file
+    - crontab -l    :: list all cron jobs.
+    - crontab -e    :: edit your cron jobs.
+    - crontab -r    :: remove all your CRON jobs.
+
+
+# Create CRON job
+    - touch my-cron
+    - edit file
+        > # Run every monday at 7AM
+        > 0 7 * * 1 /opt/sale/weekly-report
+    
+    - crontab my-cron   :: it will create new cron job from file
+    
+
+
+        

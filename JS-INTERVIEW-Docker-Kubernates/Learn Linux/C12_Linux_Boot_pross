@@ -1,0 +1,40 @@
+# Linux Boot Process
+    - BIOS
+    - BOOTLOADER
+    - Linux KERNEL
+    - Runlevels
+
+# BIOS
+    - Basic I/O sys
+    - special firmware
+    - it is Operating System Independent
+    - primary process is to find & execute the 'Boot Loader'
+    - Perform the POST
+        - Power On Self Test
+        - POST checks CPU, Memory, Storage Device
+
+    - Once POST success -> BIOS run BootLoader
+
+    - bootable deveice: Hard Dirve, USB Drive, DVD Drive etc.
+
+# BOOT LOADER
+    - LILO (Old Method)
+        -> Linux Loader
+    
+    - GRUB
+        - Grand Unified BOOT Loader
+        - replace LILO
+
+    - Bootloader start the OS.
+    
+# Intital RAM Disk
+    - intird    ::   initial RAM Disk
+    - contain helper & module req to load OS file sys
+
+# /boot dir
+    - contain files req to boot linux
+    - initrd
+    - kernel
+    - boot loader config
+
+    - ls -F /boot

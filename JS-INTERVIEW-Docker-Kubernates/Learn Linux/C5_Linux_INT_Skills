@@ -1,0 +1,83 @@
+# Linux Intermediate Skills
+    - A
+
+# WILDCARDS:
+    - * - matches 0 or more character
+        - *.txt
+        - a*.txt
+
+    - ? - matches exactly 1 character
+        - ?.txt
+        - a?.txt
+    
+    - [] - matches any of character in []
+        - ca[tn]* -> cat , can 
+
+    - [!] - exclude the matching any char
+        - [!can]* 
+
+    - [a-g]* :: match all files that start with a-to-g
+    - [3-6]* :: match all files that start with 3-6
+
+# INPUT, OUTPUT, REDIRECTION
+    ## Types of I/O
+            I/O Name        Abb       File Descriptor
+        - Standard Input  - stdin   -   0 
+        - standard OUTPUT - stdout  -   1
+        - standard Error  - stderr  -   2
+    ## Redirection
+        - '>'  - redirects standard O/P to a file.
+              overwrites(truncating) existing Contents
+
+        - '>>' - redirects standard o/p to a file 
+                Appends to any existing Contents
+
+        - '<' - Redirects input from a file to a command
+    
+    ## Redirection with File Descriptor
+        - '&'      - used with redirection to signal that file descriptor is being used
+        - '2>&1'   - combine stderr & stdout
+        - '2> file' - redirect stderr to a file
+
+    ## Ignore OutPut: The Null Device
+    > /dev/null  :: redirect output to no-where
+        - ls here not-here 2> /dev/null :: print only 'here' file, as 'no-here' file doesn't exits
+        - ls here not-here > /dev/null 2>&1
+
+- ## Example:
+      - ls > file.txt       :: copy o/p of 'ls' command & OVERWRITE to file.txt
+      - ls -l >> file.txt   :: copy o/p & APPEND 'ls' command & APPEND to file.txt
+      - sort < file.txt     :: take the i/p of file.txt content & run
+      - [ls > file.txt] & [ls 1> file.txt] :: both command are SAME
+      - sort < file.txt > sorted_file.txt  :: i/p & o/p combine.
+
+
+    ## Important Example
+        - ls file.txt not-here  
+            -> ls: cannot access 'not-here': No such file or dir
+            -> file.txt
+        
+        - ls file.txt not-here > store_out :: store STDOUT of command in a file store_out
+            -> ls: cannot access 'not-here': No such file or dir
+            
+        - ls file.txt not-here 2> store_out.err :: store STDERR of command in a file store_out.err
+            -> file.txt
+
+        - ls file.txt not-here 1> store_out 2> store_out.err :: store STDOUT to store_out & STDERR to store_out.err
+
+        
+        - ls file.txt not-here 1> store_out_append_error 2>&1 :: '2>&1' means '2>' STDERR & '&1' append to STDOUT
+
+
+
+# Compare Files:
+    - diff file_1 file_2 
+        -> 2c3
+            -> left_file_line_no - action - right_file_line_no
+    - sdiff f1 f2   ::  side-by-side comparsion
+    - vimdiff f1 f2   ::  vim highlight comparsion
+        -> Comands:
+            - ctr+w : change window
+            - :q    : close current window
+            - :qa   : close all window
+            - :qa!  : Force close all window

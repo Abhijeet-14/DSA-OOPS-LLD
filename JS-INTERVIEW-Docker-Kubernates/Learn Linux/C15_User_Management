@@ -1,0 +1,47 @@
+# User Management   
+    - linux is Multi-User OS.
+
+    - Account contain:
+        - username
+        - UID
+        - Default Group
+        - Comments
+        - shell
+        - Home dir location
+
+    - all this info is stored in "/etc/passwd"
+        - username:password:UID:GID:comments:home_dir:shell
+
+        e.g., adminuser:x:1000:1000:comment_1:/home/adminuser:/bin/bash
+
+- what is 'x' in place of password
+
+# Password store in /etc/shadow
+
+    - earlier, encrypted password used to store in /etc/password
+    - /etc/password is readible by everyone
+
+    - now, encrypted password used to store in /etc/shadow
+    - /etc/shadow is only readable by  only root.
+
+
+    
+# Create PassWord using passwd
+    > passwd grant
+        => Enter New CUNIX password:
+        => Re-Enter New UNIX password:
+        - Password updated Successfully!!
+
+# Groups
+    - groups are store in  /etc/group
+    - format
+        g_name:pwd:GID:acc1,acc2..accN
+
+    - add group
+        > groupadd tv
+    
+    - delete group
+        > groupdel tv
+
+    - Rename group
+        > groupmod -n g_name1 g_name2

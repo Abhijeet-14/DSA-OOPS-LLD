@@ -1,0 +1,72 @@
+# Networking - DNS & HostNames
+    - Determine Your IP add
+    - ip & ifconfig utilities
+    - hostnames
+    - DNS & Name resolution
+    - /etc/hosts/
+    - /etc/nsswitch.conf
+
+# Determine Your IP add 
+    - ip addr
+        -> lo : loopback - localhost    
+            127.0.0.1/8
+
+        -> enp0 : BroadCase, Multicast etc
+            192.168.1.122/24
+
+    - ip address show OR ip a s
+
+    - ifconfig
+        -> eth0:
+            inet:       192.168.1.122
+            subnet:     255.255.255.0
+            broadcast:  192.168.1.255
+        -> lo
+            127.0.0.1
+
+# Hostname:
+    - huname "readble name" for an IP add
+        google.com => 192.168.56.1
+    
+# DNS hostname
+    - FQDN  = Fully qualified Domain Name
+        - web.us.google.com
+
+    - TLD - top level DomainName
+        - .com, .org
+
+    - Domains - left to TLD
+        - google
+
+    - sub-domain - left to domain
+        - us 
+
+# Display hostname
+    > hostname
+    > hostname -f
+    > hostnamectl
+    > hostnamectl set-hostname linux
+
+# Resolve DNS Name:
+    - host
+    - dig
+    e.g., 
+        > host www.mycompany.com
+            => www.mycompany.com has address '172.239.182.192'
+
+        > host 142.250.192.132
+
+# /etc/hosts file
+    - contain list of Ip & hostname
+    - format: 
+        IP FQDN
+
+# /etc/nsswitch.conf
+    - nss: Name Service Switch
+    - controls the search order for resolutions
+
+    > hosts: files dns      :: first search files   >> 2nd dns-server
+
+    > hosts: files nis dns      :: first search files >> 2nd nis search >> 3rd dns-server
+
+  

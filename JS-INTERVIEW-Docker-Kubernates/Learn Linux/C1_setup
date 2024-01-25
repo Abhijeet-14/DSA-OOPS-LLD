@@ -1,0 +1,28 @@
+# Linux Distribution
+    - Linux is an Operating System
+    - Linux OS = Linux Distribution
+
+# Linux Kernel 
+    - Kernel is core/Heart of OS
+    - it is "intermediate" b/w Software and Hardware
+    - Linux Kernel + app  = Distribution
+    - redhat or ubuntu - licensed
+        - centOS - free linux
+
+
+# Setup
+    - Install Virtual Box # https://www.virtualbox.org/
+    - Install 7-zip. # https://www.7-zip.org/index.html
+        - this help in extracing linux os
+    - install centOS # https://www.linuxtrainingacademy.com/vdi/
+    - extract centOS with 7-zip
+
+    - Run VirtualBox 
+        > New > <NAME> it > select RAM > select centOS location in HDD > create
+    - run <NAME>
+    - once centOS is booted up
+    - login - username: adminuser
+            - pwd: adminuser
+    
+
+    

@@ -1,0 +1,24 @@
+# Disk Management
+    - Partitions
+    - MBR
+    - GPT
+    - Mount Points
+    - fdisk
+
+# Partition:
+    - Disk can be divide into parts called PARTITION
+    - patrtitions allow you to Separate Data
+
+# MBR  - Master Boot Record
+    - Can only address 2TB disk space
+    - 4 primary partitions
+
+# GPT:
+    - support upto 128 partitions
+    - support upto 9.4 ZB disk size
+
+# fdisk
+    - alternate: gdisk, parted
+
+# df command
+    :: disk free command
