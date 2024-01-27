@@ -1,0 +1,54 @@
+/* .static-container {
+  border: 2px black solid;
+  margin: 8px 0;
+  position: static;
+}
+.static-box {
+  width: 100px;
+  height: 100px;
+  background-color: #f68686;
+} */
+
+.relative-container {
+  border: 2px black solid;
+  margin: 8px 0;
+  position: relative;
+}
+
+.relative-box {
+  position: relative;
+  left: 50px;
+  top: 20px;
+  width: 100px;
+  height: 100px;
+  background-color: #f5ea6b;
+}
+
+.absolute-container {
+  border: 2px black solid;
+  margin: 8px 0;
+  position: relative;
+  height: 200px;
+}
+
+.absolute-box {
+  position: absolute;
+  left: 50px;
+  top: 20px;
+  width: 100px;
+  height: 100px;
+  background-color: #87fc72;
+}
+
+.sticky-container {
+  border: 2px black solid;
+  margin: 8px 0;
+  position: sticky;
+}
+.fixed-box {
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  background-color: #8353e9;
+}

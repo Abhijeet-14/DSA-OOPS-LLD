@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn CSS</title>
+    <link rel="stylesheet" type="text/css" href="positioning.css" />
+  </head>
+
+  <body>
+    <h1>Learn CSS - POSITIONING</h1>
+    <style>
+      .static-container {
+        border: 2px black solid;
+        margin: 8px 0;
+        position: static;
+      }
+      .static-box {
+        width: 100px;
+        height: 100px;
+        background-color: #f68686;
+      }
+    </style>
+    <div>
+      <h2>Basic Positioning</h2>
+      <div class="static-container">
+        Static Positioning
+        <div class="static-box">Static Box</div>
+      </div>
+      <div class="relative-container">
+        <div>Relative Positioning</div>
+        <div class="relative-box">Relative Box</div>
+      </div>
+      <div class="absolute-container">
+        <div>Absolute Positioning</div>
+        <div class="absolute-box">Absolute Box</div>
+      </div>
+    </div>
+    <div>
+      <h2>Advanced Positioning</h2>
+      <div class="sticky-container">
+        Fixed Positioning
+        <div class="fixed-box">Fixed Box</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+      </div>
+
+      <div>Sticky Positioning</div>
+    </div>
+  </body>
+</html>
