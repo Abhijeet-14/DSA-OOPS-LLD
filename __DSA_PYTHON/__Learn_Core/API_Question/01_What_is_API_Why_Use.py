@@ -82,7 +82,11 @@ to create resource?
     => Yes, But as per REST --> POST is for CREATE && PUT is for UPDATE
 """
 
-"""
+
+
+
+""" Common Asked Question:
+
 1. What is RESTFul web service? What are it's Features?
     => Rest is Architechure STYLE for designing networked application
         - how data is transferred 
@@ -92,31 +96,35 @@ to create resource?
     => Based on pricinples of Simplicity, Scalability and Statelessness
 
 2. What are disadvantages of RESTFul web service?
-    =>
+    => Over-fetching -
+    => Under-Fetching -
+    => Limited action - only HTTP methods
 
 3. What are PAYLOADs in terms of RESTFUL web service?
-    =>
+    => data sent in Request or response body
 
 4. is it possible to send the Payload in GET/Delete method?
-    =>
+    => No, REST don't stop you -- as its just a ARCH style -- it just its Not NORMAL.
 
 5. what is maximum payload size for POST method?
-    =>
+    => No Fixed Size
 
 6. Which Markup Langaue is Used in RESTFul web API?
-    =>
+    => No markup -- data format is JSON or XML
 
 7. what is XML vs JSON?
-    =>
+    => XML - eXtensible Markup Language -- Hierarchical Structure
+    => JSON - Javascript Object Notation -- Lightweight, Easy to Read as Object
 
 8. What is Resource in REST? What is the way to represnt it?
-    =>
+    => 
+    => Represent using JSON or XML
 
 9. What is advantages of using REST in web API?
-    =>
+    => simplicity -- Scalability -- Statelessness
 
 10. What is the Concept of State-less-ness in REST?
-    => when Client make request --  request MUST contain all information Needed to fulfill request.
+    => Client Request MUST contain all information Needed to fulfill request.
 
 11. What is URI
     => Uniform Resource Identifier -- it includes URL
