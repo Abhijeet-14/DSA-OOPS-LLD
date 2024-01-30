@@ -1,5 +1,7 @@
 """ INTERVIEW TIPS - DSA:
 
+    INTERVIEW IS CONVERSATION -- NOT A RACE
+    
     1. Slow Down & Think:
         - Repeat Question
         - ASK clarifing question
@@ -25,6 +27,8 @@
         - Understand Interview Format -- Ask in START
         - How many questions to Expect -- Ask in START
 
+        
+    INTERVIEW IS CONVERSATION -- NOT A RACE
 """
 
 
