@@ -1,7 +1,7 @@
 """ INTERVIEW TIPS - DSA:
 
     INTERVIEW IS CONVERSATION -- NOT A RACE
-    
+
     1. Slow Down & Think:
         - Repeat Question
         - ASK clarifing question
@@ -32,6 +32,18 @@
 """
 
 
+""" DO YOU HAVE ANY QUESTION FOR ME?
+    - if don't ask -- seen as Lacking CRITICAL Thinking & interest in role.
+
+    1. What will be the responsibility of this position?
+    2. Research company? and question to that?
+    2. How is the transistion happen to new join into development?
+    2. How much company has changed or evloved in your time here?
+    2. What are the culutral benifits this company use to be so successful?
+
+"""
+
+
 """ HIRING MANAGER 
 
 """
@@ -44,4 +56,35 @@
 
 """ BEHAVIORAL ROUND 
 
+"""
+
+
+"""
+====================================
+COMPANY - TEKION
+====================================
+1. Do you have any question for me?
+    a) from Internet I got know that Tekion provides complete services(payroll, accounts, general entries etc) 
+        to some product Dealership. Could you explain its products?
+    b) what will be the Goal of this position if selected.
+    c) can you describe the company's culture and role growth happen here
+    d) Do you have any tips on my experience or skills set? 
+"""
+
+
+"""
+====================================
+COMPANY - ZoomInfo
+====================================
+1. Do you have any question for me?
+    a)
+"""
+
+
+"""
+====================================
+COMPANY - BCG
+====================================
+1. Do you have any question for me?
+    a)
 """
