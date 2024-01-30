@@ -5,9 +5,12 @@
 - Heap-Sort
 - Merge-Sort
 - Prefix & Sufix Sum
+- Sliding window
+=== LinledList ===
+- Detect Cycle in LL 
 === Matrix ===
+- Flood Fill 
 - Lee 
-
 === Graph ===
 - BFS
 - DFS
@@ -16,6 +19,4 @@
 - Bellman-Ford 
 - Kruskal 
 - Topological 
-- Flood Fill 
-- Detect Cycle in LL 
 """
