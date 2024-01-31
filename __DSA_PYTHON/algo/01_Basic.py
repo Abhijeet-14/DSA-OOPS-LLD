@@ -1,9 +1,9 @@
 """ ALGORITHMS:
 === Array ===
 - Binary Search
-- Kadane's 
 - Heap-Sort
 - Merge-Sort
+- Kadane's 
 - Prefix & Sufix Sum
 - Sliding window
 === LinledList ===
@@ -15,8 +15,8 @@
 - BFS
 - DFS
 - Dijkstra 
-- Floyd-Warshall 
-- Bellman-Ford 
-- Kruskal 
+- Floyd-Warshall - Graph -ve weight - Advanced
+- Bellman-Ford -  Graph -ve weight - Advanced
+- Kruskal - Min Spanning Tree - Advanced
 - Topological 
 """
