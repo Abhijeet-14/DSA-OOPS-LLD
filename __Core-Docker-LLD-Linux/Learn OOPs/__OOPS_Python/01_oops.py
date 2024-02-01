@@ -108,22 +108,57 @@ class Logger:
 
 
 # SOLID
-# S - Single Responvity Principle
-# definition - a class should have one reason to change
+"""
+S - Single Responvity Principle
+    definition - 
+        - A class should have one & only one reason to change
+        - assume a class is updating DB and send mail... 2 task
+"""
+
+
 class Calculator:
     def add(self, a, b):
         return a + b
 
 
-# O - Open/Closed
-# defi - open for extension but closed for modification
-class Circle:
-    def area(self, radius):
-        return 3.14 * radius * radius
+"""
+O - Open/Closed
+    definition - entities(classes, module, function etc) should be open
+                for EXTENSION BUT closed for MODIFICATION
+
+                - assume a class CalculateArea{}..
+                - it works for Square and Rectangle
+                - but for Circle -- need to add new logic
+                - HENCE, violates the Open Closed Principle.
+"""
 
 
-# L - Liskov subsitiution
-# definition - object of Parent can replacebale with Object of Child
+class Shape:
+    def CalculateArea(self, L, B):
+        return L * B
+
+
+"""
+L - Liskov subsitiution
+    definition - a class can be replaced by its sub-class in all
+                particular usage scenarios.
+
+                - e.g., 'class Bird' & 'class Sparrow'
+                        Bird can Fly
+                    - Sparrow extends Bird
+                        so, sparrow also fly... bcoz of parent
+                    Now,
+                    - Ostrich extend Bird
+                        and Ostrich Also fly... bcoz of parent.
+                        but in Real Ostrich DOES NOT fly.
+
+                - so, 'GrandParent' class Bird & 'Parent' class FlyingBird
+                    - so, FlyingBird extends Bird
+                    - Sparrow extends FlyingBird
+                    - Ostric only extends Bird
+"""
+
+
 class Bird:
     def fly(self):
         pass
@@ -134,8 +169,36 @@ class Sparrow(Bird):
         return "Sparrow is flying"
 
 
-# I - Interface segregation
-# definition - a class should not be forced to implement interfaces it does not use.
+"""
+I - Interface segregation
+    definition - it says, a client should not be FORCED to implement
+                    an interface that it DOES NOT required.
+
+                - means breaking interface into small small interfaces.
+                    so purpose can be achieved
+
+                - Example
+                    'Worker' Interface(work() & sleep())
+                        so..
+                    if 'Human' implements Worker
+                        then Human(work() & sleep())
+                    also,
+                    if 'Robot' implements Worker
+                        then Robot(work() & sleep())
+                    But that is NOT possible in REAL.
+
+                - So, sub-interface needs to create.
+                - 'Worker' interface &
+                - 'Sleeping' interface
+                - so,
+                    Human -> Worker & Sleeping
+                        Human(work() & sleep())
+
+                    Robot -> Worker
+                        Robot(work())
+"""
+
+
 class Worker:
     def work(self):
         pass
@@ -149,6 +212,7 @@ class Eater:
 # D - Dependency Inversion
 # definition - high-level modules should not depend on low-level modules -
 #           - both should depend on abstraction
+# DIDN'T Understand
 from abc import ABC, abstractmethod
 
 
