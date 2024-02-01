@@ -33,7 +33,7 @@
 
 
 """ DO YOU HAVE ANY QUESTION FOR ME?
-    - if don't ask -- seen as Lacking CRITICAL Thinking & interest in role.
+    - if don't ask -- seen as LACKING Critical thinking & Interest in role.
 
     1. What will be the responsibility of this position?
     2. Research company? and question to that?
