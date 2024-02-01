@@ -3,7 +3,7 @@ package oops._5_Design_Priniciples;
 public class _1_Design_Patttern_SingleTon {
     /*
         Singleton Pattern - It ensures that only 1 instance of object is created
-            and tha instance is globally accessible.
+            and that instance is globally accessible.
 
         - Logger - Logging is one meaningful example for the Singleton as the information flow happens
             only in one direction and therefore global state is not a big issue.

@@ -217,4 +217,12 @@
 30. Serializer?
     - Serializer  -- Deserialization - when send data from Client to Djnago
     - helps in validation
+
+31. How to specify a folder is python module?
+    - init.py
+
+32 Dunder method
+    - __init__
+    - __str__
+    - __lt__
 """
