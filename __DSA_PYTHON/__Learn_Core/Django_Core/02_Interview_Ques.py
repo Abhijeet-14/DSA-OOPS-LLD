@@ -103,13 +103,118 @@
 
     => File Structure - APP:
 
-4. 
-"""
+4. Why Djnago is Loosely Coupled Langaue?
+    - FE & BE can work independetly
+    - 
 
-""" COMMONLY ASKED Question
+5. Explain Migratioins?
+    - migration is use to store new changes of model -- and then later reflect on DB.
 
-"""
+6. ORM?
+    - it replace SQL query
+    - interact with DB in more pythonic way
 
-""" ADVANCED ASKED Question
+7. setup DB in django
+    - in settings.py >> DATABASES = {
+        'default': {'ENGINE': "", "NAME":"", "PORT", "USERNAME":"", "PASSWORD":""}
+    }
 
+8. CSRF token?
+    - cross-site request Forgery
+    - to prevent from attact
+    - included in HTTP
+    - if not availble -- don't allow
+
+9. QUERYSET?
+    - in gernal, it is collection of SQL query.
+    - in Django, it is collections of Object.
+
+10. select_related in Django?
+    - select_related -- it gets own data + FK-model-data
+    - get() -- will make 2 call -- 1 for own-data & other for FK-model-data
+
+11. all(), filter(), get() ?
+    - 
+
+12. static file? and its configuration?
+    - to store additional HTML, JS, CSS
+    - settings.py >> INSTALLED_APPS = ["", "django.contrib.staticfiles", ""]
+    - settings.py >> STATIC_URL = "/"
+    - {%load static%} -- in templates file at top
+
+13. Flask vs Django?
+    - Flask -- microframework -- small application -- external libraries
+    - Django -- detailed-Framework -- Large application -- project structure -- DB managment & ORM -- internal libraries
+
+14. DJnago admin?
+    - command line prompt -- to do administrative task
+    - now with admin interface we can handle better
+    
+15. Advantage or Disadvantage of Django?
+    - Advantage
+        - easy to learn
+        - DRY
+        - ORM
+        - Rapid Development
+        - highly scalable
+        - venv
+    - Disadvantage
+        - monolithic
+        - modules are bulky
+        - completely ORM based
+
+16. shortcut to easily render an HTML response?
+    - render_to_response
+
+17. Authenticaiton or Authorization
+    - Authenticaiton - who are you?
+    - Authorization - what all permission you have
+
+18. to return respone?
+    - render(request, status)
+
+19. Q object in ORM?
+    - to add multiple filter -- on OR - AND fashion
+    - Model.objects.get(Q(question__startswith="When") | Q(answer_startswith='AI))
+    - Model.objects.get(Q(question__startswith="When") & Q(answer_startswith='AI))
+
+20. manage.py?
+    - first point -- here it find which settings.py need to hit
+
+21. include function in urls.py
+    - urlpatterns = [path("myapp/", include("myapp.urls"))]
+
+22. Django Rest Framework?
+    - powerfull library to build Web APIs
+    - quicly create REST API
+
+23. Middleware?
+    - before each request goto its views.py -- a middleware process the request - then pass futher
+    - execute b/w request & response
+    - settings.py >> MIDDLEWARE =[".."]
+
+24. Session?
+    - store credentials with tab in server-side
+
+25. Django exception?
+    - unsudden error
+    - try: except Exception as e:
+
+26. .get() exception?
+    - DoesNotExtst
+    - MultipleObjectsReturned
+
+27. regex for URLS?
+    - easy to handle and reduce code
+
+28. diff bw OneToOneField vs FK?
+    - OneToOneField is similar to FK -- but its "REVERSE" side is also handle -- not in FK
+
+29. Serializetion?
+    - model into json() or XML format
+    - ModelSerializer  -- serialization - when send data from Django to Client
+
+30. Serializer?
+    - Serializer  -- Deserialization - when send data from Client to Djnago
+    - helps in validation
 """
