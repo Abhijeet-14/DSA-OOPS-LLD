@@ -36,10 +36,12 @@
     - if don't ask -- seen as LACKING Critical thinking & Interest in role.
 
     1. What will be the responsibility of this position?
-    2. Research company? and question to that?
+    2. Research company? and question to that? product-could you explain the product in more detail
     2. How is the transistion happen to new join into development?
     2. How much company has changed or evloved in your time here?
     2. What are the culutral benifits this company use to be so successful?
+    6. How will my performance measured?
+    7. What training program I need to go for the tranisiton to this role?
 
 """
 
