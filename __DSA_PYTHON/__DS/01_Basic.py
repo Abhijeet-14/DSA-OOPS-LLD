@@ -12,7 +12,7 @@ print("List Repetation: ", arr_1 * 2)
 arr_2 = [val * val for val in arr_1]
 print("Copy List & Mutated: ", arr_2)
 
-
+arr_2.sort(key=lambda x: x["age"])
 # Concatenation array
 arr_3 = arr_2 + arr_1
 print("Concatenation List: ", arr_3)

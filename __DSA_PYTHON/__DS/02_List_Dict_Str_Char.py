@@ -25,6 +25,9 @@ print("\tLength => ", len(string))
 for c in string:
     print("\tBy Character: ", c)
 
+print("Reverse a String")
+print("".join(reversed(string)))
+
 print("\n========== Sort List ==========")
 arr_2.sort()
 print("\tSort List", arr_2)

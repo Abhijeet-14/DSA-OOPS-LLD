@@ -16,7 +16,7 @@ public class C3_Max_Path_Sum_Any_Node_To_Any {
         root.right = new Node(3);
 
         int rec = solve_rec(root);
-        System.out.println(rec + " :- 4 cases (NLR, NL, NR, R) - Any Node to Any Node");
+        System.out.println(rec + " :- 4 cases (NLR, NL, NR, N) - Any Node to Any Node");
         System.out.println(res);
 
     }
