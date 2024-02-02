@@ -42,7 +42,6 @@ by a user
       2. Order by: Order reviews by levels of reviewers
 """
 
-
 """ SOLUTION
 # Requirements - clarification
     1. Actor - resaturant, user
