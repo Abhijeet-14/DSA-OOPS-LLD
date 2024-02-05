@@ -35,15 +35,16 @@ my_dog.name
 my_dog.bark()
 
 
-# Inheritence
+# Inheritence - where a new class can inherit attributes and methods from an existing class,
 class Labrador(Dog):
     def swim(self):
         print(f"{self.name} can swim!")
 
 
-# Encapsulation
+# Encapsulation - bundling of data (attributes) and methods
 class Car:
-    def __init(self, model, fuel_type):
+
+    def __init__(self, model, fuel_type):
         self.model = model
         # PRIVATE ATTRIBUTE
         self.__fuel_type = fuel_type
@@ -55,7 +56,9 @@ class Car:
         print("This is a private method.")
 
 
-# Abstraction -- and Interface same for Python Case
+# Abstraction - Abstraction is like using a toy phone -
+#               – you press buttons to talk, but you don't need to know how it works inside.
+#       - and Interface same for Python Case
 from abc import ABC, abstractmethod
 
 
@@ -81,7 +84,7 @@ class Square(Shape):
         return self.side_length * self.side_length
 
 
-# Polymorphism
+# Polymorphism - overriding of a function compile/runtime
 class Animal:
     def speak(self):
         pass
@@ -232,3 +235,19 @@ class LightBulb(Switchable):
 
     def turn_off(self):
         return "LightBulb is off"
+
+
+# Mulitple Inheritence
+class ClassA:
+    def method_A(self):
+        return "Method A from ClassA"
+
+
+class ClassB:
+    def method_B(self):
+        return "Method B from ClassB"
+
+
+class MyClass(ClassA, ClassB):
+    def my_method(self):
+        return "My method in MyClass"

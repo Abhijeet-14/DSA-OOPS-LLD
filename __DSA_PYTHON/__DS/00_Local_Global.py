@@ -9,8 +9,8 @@ def double(arr, val):
         # val *= 2
 
         # this will modiy val outside helper scope
-        # nonlocal val
-        # val *= 2
+        nonlocal val
+        val *= 2
 
     helper()
     print("L14", arr, val)
