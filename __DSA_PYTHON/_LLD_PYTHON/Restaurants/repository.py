@@ -56,3 +56,13 @@ class RestaurantRepo:
 
     def get_all_restaurants(self):
         return self.__restaurants.values()
+
+
+def create_db():
+    user_db = UserRepo.create_user_table()
+    restaurant_db = RestaurantRepo.create_restaurant_table()
+
+    return {
+        "user_db": user_db,
+        "restaurant_db": restaurant_db,
+    }
