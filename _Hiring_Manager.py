@@ -57,10 +57,19 @@ CV - Project wise
         Answer => 
 
     Q3) can you elaborate on how you aligned with FHIR (HL7) standards for robust data management?
-        Answer => 
-    
+        Answer => - AWS Healthlake prodvide for storing and struing healthcare data in secure and compliant manner.
+                  - FHIR - Fast Healthcare Interoperability Resources
+                  - HL7 - set of standards for exchange of electronic health information
+
     Q4) what principles or best practices do you follow when designing APIs? 
-        Answer => 
+        Answer =>
+
+    Q5) What factors influenced the decision to migrate, and how did the migration enhance scalability and cost efficiency at Care Conductor?
+    Q6) Can you elaborate on the strategy used and the benefits gained from isolating these interactions? 
+    Q7) How did it contribute to seamless expansion across cloud services?
+    Q8) In terms of HL7, How did the implementation contribute to robust data management at Care Conductor?
+    Q9) Were there specific challenges or considerations in aligning with industry standards?
+    Q10) 
 
 4. Hire Inno
     Q1) How did these tools enhance the hiring process, and what technologies did you leverage, particularly in the API server development using Django, SQL, and AWS S3?
@@ -70,3 +79,28 @@ CV - Project wise
         Answer => 
 
 """
+
+
+# my_module.py
+
+
+def add_numbers(a, b):
+    return a + b
+
+
+# test_my_module.py
+
+# from my_module import add_numbers
+
+
+def test_add_numbers():
+    result = add_numbers(2, 3)
+    assert result == 5
+
+
+def test_add_numbers_negative():
+    result = add_numbers(-2, 3)
+    assert result == 1
+
+
+# pytest test_my_module.py
