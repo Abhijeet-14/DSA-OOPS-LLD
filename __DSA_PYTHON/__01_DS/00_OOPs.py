@@ -131,8 +131,9 @@ O - Open/Closed
 
                 - assume a class CalculateArea{}..
                 - it works for Square and Rectangle
-                - but for Circle -- need to add new logic
+                - but for Circle -- need to add new logic in Shape
                 - HENCE, violates the Open Closed Principle.
+                - solution, in class Circle, modify it--but not in shape
 """
 
 
