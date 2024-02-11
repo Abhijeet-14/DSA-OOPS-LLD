@@ -1,5 +1,7 @@
 # arr = [8, 9, 10, 12, 15, 18, 20, 1, 3, 5, 6, 7, 9, 11, 14, 16, 17, 19, 20, 21]
 arr = [5, 6, 7, 8, 9, 10, 1, 2, 3]
+# arr = [5, 6, 7, 8, 9, 10]
+# arr = [10, 6, 7, 8, 9]
 
 
 def binary_search(arr, target, start, end):
@@ -43,6 +45,6 @@ result_right = binary_search(arr, target, peek + 1, len(arr) - 1)
 if result_left == -1 and result_right == -1:
     print("Target does not exist")
 elif result_left != -1:
-    print("Target exist at: ", result_left)
+    print("Target exist at left subarray: ", result_left)
 else:
-    print("Target exist at: ", result_right)
+    print("Target exist at right subarray: ", result_right)
