@@ -6,7 +6,7 @@ Top 4 Design Pattern which are widely used in Industry.
             => Pros: Global point of access, Single Instance, Lazy initialization
             => Cons: Global state, difficulty in testing
 
-    2. Factory
+    2. Factory Method
             => Purpose: Defines an Interface for creating an object, 
                         but lets subclass change the type of objects 
                         that will be created
@@ -29,7 +29,7 @@ Top 4 Design Pattern which are widely used in Industry.
 """
 
 #### Singleton ####
-print("\n==== Singleton Method ====")
+print("\n==== Singleton Pattern ====")
 
 
 class Singleton:
@@ -60,8 +60,8 @@ print(s1)
 print(s2)
 
 
-#### Factory Method ####
-print("\n==== Factory Method ====")
+#### Factory Method Pattern ####
+print("\n==== Factory Method Pattern ====")
 from abc import ABC, abstractmethod
 
 """
@@ -140,10 +140,8 @@ print(laptop.get_info())
 print(book.get_info())
 
 
-#### Observer Method ####
-print("\n==== Observer Method ====")
-from abc import ABC, abstractmethod
-
+#### Observer Pattern ####
+print("\n==== Observer Pattern ====")
 """
 Def: 1-to-Many dependency b/w objects -
         - when 1 objects changes states, all get notified & updated automatic
@@ -160,7 +158,7 @@ from abc import ABC, abstractmethod
 
 class Observer(ABC):
     @abstractmethod
-    def update(self):
+    def update(self, availability):
         pass
 
 
@@ -174,17 +172,18 @@ class Subject(ABC):
         # remove first occurance of value
         self._observers.remove(observer)
 
-    def notify(self):
+    def notify(self, availability):
         for observer in self._observers:
-            observer.update()
+            observer.update(availability)
 
 
 class ProductAvailability(Subject):
     availability = False
 
     def set_availability(self, availability):
+        print("\n--- Product status change ---")
         self.availability = availability
-        self.notify()
+        self.notify(self.availability)
 
     def get_availability(self):
         return self.availability
@@ -194,10 +193,8 @@ class Customer(Observer):
     def __init__(self, name):
         self.name = name
 
-    def update(self):
-        product_status = (
-            "Available" if product_availability.get_availability() else "Out Of Stock"
-        )
+    def update(self, availability):
+        product_status = "Available" if availability else "Out Of Stock"
         print(f"Customer {self.name}: Product is {product_status}")
 
 
@@ -212,3 +209,18 @@ product_availability.attach(customer_2)
 product_availability.set_availability(True)
 
 product_availability.set_availability(False)
+
+
+#### Strategy Pattern ####
+print("\n==== Strategy Pattern ====")
+"""
+Def: 1-to-Many dependency b/w objects -
+        - when 1 objects changes states, all get notified & updated automatic
+Real World Ex: Notification
+Pros:
+    1. Loose Coupling: Subjects and observers are loosely coupled.
+    2. Extensibility: Easily add or remove observers.
+Cons:
+    1. Unexpected Updates: Observers might receive updates they are not interested in.
+    2. Ordering of Notifications: The order in which observers are notified can be challenging to control.
+"""
