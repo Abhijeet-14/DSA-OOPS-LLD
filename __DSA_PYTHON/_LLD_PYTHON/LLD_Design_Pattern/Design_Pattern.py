@@ -28,7 +28,187 @@ Top 4 Design Pattern which are widely used in Industry.
             => Cons: Increased classes, potential complexity
 """
 
-
 #### Singleton ####
+print("\n==== Singleton Method ====")
+
+
 class Singleton:
-    pass
+    """
+    Def: a class has only 1 instance & global access.
+    Real World Example: Database, Logging
+    """
+
+    # static variable -- class variable
+    _instance = None
+
+    # with init --> infinte loop --> cause Singleton() -> create_instance -> Singleton()
+    @staticmethod
+    def create_instance():
+        if not Singleton._instance:
+            Singleton._instance = Singleton()
+        return Singleton._instance
+
+    def get_instance(self):
+        return self._instance
+
+
+s1 = Singleton().create_instance()
+s2 = Singleton().create_instance()
+
+print(s2 is s1)
+print(s1)
+print(s2)
+
+
+#### Factory Method ####
+print("\n==== Factory Method ====")
+from abc import ABC, abstractmethod
+
+"""
+Def: interface for creating object, but subclass change type of objects 
+        that will be created.
+Real World Ex: Product creation, diff category(Books, electronics) can have 
+                their own Factory methods for creating product.
+"""
+
+
+class Product(ABC):
+    """
+    Product Interface
+    """
+
+    @abstractmethod
+    def get_info(self):
+        pass
+
+
+class Laptop(Product):
+    """
+    Concreate Product
+    """
+
+    def get_info(self):
+        print("Mouse Created")
+        print("Keyboard created")
+        return "Laptop created"
+
+
+class Book(Product):
+    """
+    Concreate Product
+    """
+
+    def get_info(self):
+        return "Book Created"
+
+
+class ProductCreator(ABC):
+    """
+    Creator Interface
+    """
+
+    @abstractmethod
+    def create_product(self):
+        pass
+
+
+class LaptopCreator(ProductCreator):
+    """
+    Concreate creator interface
+    """
+
+    def create_product(self):
+        return Laptop()
+
+
+class BookCreator(ProductCreator):
+    """
+    Concreate creator interface
+    """
+
+    def create_product(self):
+        return Book()
+
+
+laptop_creator = LaptopCreator()
+book_creator = BookCreator()
+
+laptop = laptop_creator.create_product()
+book = book_creator.create_product()
+
+print(laptop.get_info())
+print(book.get_info())
+
+
+#### Observer Method ####
+print("\n==== Observer Method ====")
+from abc import ABC, abstractmethod
+
+"""
+Def: 1-to-Many dependency b/w objects -
+        - when 1 objects changes states, all get notified & updated automatic
+Real World Ex: Notification
+Pros:
+    1. Loose Coupling: Subjects and observers are loosely coupled.
+    2. Extensibility: Easily add or remove observers.
+Cons:
+    1. Unexpected Updates: Observers might receive updates they are not interested in.
+    2. Ordering of Notifications: The order in which observers are notified can be challenging to control.
+"""
+from abc import ABC, abstractmethod
+
+
+class Observer(ABC):
+    @abstractmethod
+    def update(self):
+        pass
+
+
+class Subject(ABC):
+    _observers = []
+
+    def attach(self, observer: Observer):
+        self._observers.append(observer)
+
+    def detach(self, observer):
+        # remove first occurance of value
+        self._observers.remove(observer)
+
+    def notify(self):
+        for observer in self._observers:
+            observer.update()
+
+
+class ProductAvailability(Subject):
+    availability = False
+
+    def set_availability(self, availability):
+        self.availability = availability
+        self.notify()
+
+    def get_availability(self):
+        return self.availability
+
+
+class Customer(Observer):
+    def __init__(self, name):
+        self.name = name
+
+    def update(self):
+        product_status = (
+            "Available" if product_availability.get_availability() else "Out Of Stock"
+        )
+        print(f"Customer {self.name}: Product is {product_status}")
+
+
+product_availability = ProductAvailability()
+
+customer_1 = Customer("Alice")
+customer_2 = Customer("Bob")
+
+product_availability.attach(customer_1)
+product_availability.attach(customer_2)
+
+product_availability.set_availability(True)
+
+product_availability.set_availability(False)
