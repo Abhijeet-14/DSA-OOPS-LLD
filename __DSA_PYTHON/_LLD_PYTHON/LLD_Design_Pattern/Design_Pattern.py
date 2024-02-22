@@ -163,12 +163,12 @@ class Observer(ABC):
 
 
 class Subject(ABC):
-    _observers = []
+    _observers: list[Observer] = []
 
     def attach(self, observer: Observer):
         self._observers.append(observer)
 
-    def detach(self, observer):
+    def detach(self, observer: Observer):
         # remove first occurance of value
         self._observers.remove(observer)
 
@@ -216,11 +216,11 @@ print("\n==== Strategy Pattern ====")
 """
 Def: 1-to-Many dependency b/w objects -
         - when 1 objects changes states, all get notified & updated automatic
-Real World Ex: Notification
+Real World Ex: Payment processing in E-commerce
 Pros:
-    1. Loose Coupling: Subjects and observers are loosely coupled.
-    2. Extensibility: Easily add or remove observers.
+    1. Flexibility: Allows clients to choose algorithms dynamically
+    2. Reusable Code: Strategies can be reused in different contexts
 Cons:
-    1. Unexpected Updates: Observers might receive updates they are not interested in.
-    2. Ordering of Notifications: The order in which observers are notified can be challenging to control.
+    1. Increase number of classes: 
+    2. Client Knowledge: client need to be aware of available strategy
 """
