@@ -43,6 +43,15 @@ Do you've any question for me?
 CV - Project wise
 
 1. Marketplace:
+    Gaurav Defin:
+        1. Deloitte has a good reach to customers and creation of this kind of platform will help AWS to get more business.
+        2. Companies like Deloitte have multiple Account(talking about seller account), managing product onboarding in these accounts is not possible from one place user has to log into diff account to get the details, here we are solving this problem.
+        3. Public URL Problem with AWS Geofencing(Dis-allowing users across location to use public offer in AWS), 
+        4. Generation customer registration form
+        5. product being showcased from Deloitte in AWS Reinvent last year.
+
+    ReInvent PPT:
+        
     Q1) Can you share more about your role in integrating with AWS Marketplace APIs at HASHEDIN?
         Answer => BE - developing solution by which any non-tech person also can list their products on AWS MP.
                 => b2b interactions with Marketplace api, other aws services.
