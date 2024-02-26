@@ -7,6 +7,23 @@ Why Change?
 why hire
 what value you will bring?
 Do you've any question for me?
+
+- Tell me about a time when you had to work closely with someone whose personality was very different from yours.
+- Give me an example of a time you faced a conflict with a coworker. How did you handle that?
+- Describe a time when you had to step up and demonstrate leadership skills.
+- Tell me about a time you needed to get information from someone who wasn’t very responsive. What did you do?
+- Give me an example of a time when you didn’t meet a client’s expectation. What happened, and how did you attempt to rectify the situation?
+- Describe a time when your team or company was undergoing some change. How did that impact you, and how did you adapt?
+- Worst ever feedback from your boss ?
+- You are 1 month away from go-live with your product. A colleague points out a bunch of holes in your product's design. How do you handle this situation?
+- Tell me about a time when you contributed to the team's success.
+- Tell me about a time when you fail to deliver the project, and what did you learn from it?
+- Tell me about a time when you demonstrated the leadership skills, when you were not officially the leader.
+- Tell me about a time when you overcame a challenge.
+- Tell me about a time when you pushed yourself outside of your comfort zone.
+- Tell me about the differences you find between the projects you did in your college time vs the projects you have done on your first job.
+
+Make sure to answer them in a STAR Format.
 """
 
 """
