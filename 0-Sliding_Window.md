@@ -4,6 +4,37 @@
 2. https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-LeetCode
 
 
+# ChatGPT Code:
+Explanation:
+    - Initialize Two Pointers: Start with 2 pointers, often both at start of  array.
+
+    - Expand the Window: Move the right pointer to expand the window, adding elements to the set or updating relevant data structures.
+
+    - Contract the Window: Move the left pointer to contract the window, removing elements from the set or updating data structures.
+
+Track and Optimize: Track the optimal result or required information as the window slides, optimizing as needed.
+# Input: [1, 3, -1, -3, 5, 3, 6, 7], k = 3
+# Output: [3, -1, -3] with the maximum sum of 9
+
+def max_sum_subarray(arr, k):
+    n = len(arr)
+    window_sum = sum(arr[:k])  # Initial sum of the first window
+    max_sum = window_sum
+
+    for i in range(k, n):
+        window_sum = window_sum + arr[i] - arr[i - k]  # Sliding the window
+        max_sum = max(max_sum, window_sum)
+
+    return max_sum
+
+# Example usage:
+arr = [1, 3, -1, -3, 5, 3, 6, 7]
+k = 3
+result = max_sum_subarray(arr, k)
+print(result)
+
+
+
 # ChatGpt Q
 Certainly! Here are 25 sliding window problems from LeetCode, each with a brief statement:
 

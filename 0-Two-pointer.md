@@ -2,6 +2,45 @@
 
 1. https://leetcode.com/problems/subarray-sum-equals-k/solutions/301242/General-summary-of-what-kind-of-problem-can-cannot-solved-by-Two-Pointers/
 
+# ChatGPT Code
+Explanation:
+    - Initialize Two Pointers: often at start and end of the array.
+
+    - Move Pointers Towards Each Other or Apart: 
+        towards each other (contracting the window)
+        apart (expanding the window).
+    
+    - Check Condition and Optimize: 
+        Check a certain condition at each step involving the elements pointed to by the two pointers. 
+        Adjust pointers and update data structures accordingly. 
+        Optimize the algorithm by avoiding redundant computations.
+
+# Input: nums = [2, 7, 11, 15], target = 9
+# Output: [0, 1] (nums[0] + nums[1] equals 9)
+
+def two_sum(nums, target):
+    left, right = 0, len(nums) - 1
+
+    while left < right:
+        current_sum = nums[left] + nums[right]
+
+        if current_sum == target:
+            return [left, right]
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+
+# Example usage:
+nums = [2, 7, 11, 15]
+target = 9
+result = two_sum(nums, target)
+print(result)
+
+
+
+
+
 # ChatGPT Q
 Certainly! Here are 25 two-pointer problems from LeetCode with concise statements:
 

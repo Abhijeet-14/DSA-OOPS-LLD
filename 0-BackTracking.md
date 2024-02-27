@@ -196,3 +196,7 @@ Expectation: Return the total Hamming distance.
 Time Complexity: O(n), where n is the number of elements in the array.
 Space Complexity: O(1).
 These additional backtracking problems cover various scenarios, including IP address restoration, gray code generation, and puzzle-solving. As always, actual complexities may vary based on specific implementations
+
+
+
+touch '06-Permutations.py' '07-Subsets.py' '08-Combination Sum.py' '09-N-Queens.py' '10-Word Search.py' '11-Sudoku Solver.py' '12-Palindrome Partitioning.py' '13-Combination Sum II.py' '14-Generate Parentheses.py' '15-Letter Combinations of a Phone Number.py' '16-Word Search II.py' '17-Regular Expression Matching.py' '18-Word Squares.py' '19-Expression Add Operators.py' '20-Restore IP Addresses.py' '21-Gray Code.py' '22-Unique Paths III.py' '23-Sudoku Solver II.py' '24-Tug of War.py' '25-Kth Permutation Sequence.py' '26-Total Hamming Distance.py'
