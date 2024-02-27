@@ -1,21 +1,19 @@
 # Arrays
 
 ## Concepts
-
 1. Understanding Arrays
-   - indexing, access & memory allocation
-   - adv & limitation of arrays
+    - indexing, access & memory allocation
+    - adv & limitation of arrays
 2. Array Operation & Complexity
-   - size -- O(1)
-   - empty -- O(1)
-   - at -- O(1)
-   - insert -- O(n)
-   - remove -- O(n)
+    - size -- O(1)
+    - empty -- O(1)
+    - at -- O(1)
+    - insert -- O(n)
+    - remove -- O(n)
 3. sorting Algo
 4. Dynamic Array
-
-   - adv
-   - resizing
+    - adv
+    - resizing
 
 5. SubArray & Subsequences
 6. Array Rotation & Reversal
@@ -24,11 +22,10 @@
 9. Review & Advanced Problems
 
 ## Problems
-
 1. Set Matrix Zeros
 2. 2 Sum
 3. Best Time to Buy & Sell Stock 2
-4. Best Time to Buy & Sell Stock
+4. Best Time to Buy & Sell Stock 
 5. Sort Colors
 6. Find all Duplicates in an Array
 7. 3 sum
@@ -45,6 +42,4 @@
 18. Find a Peak Element 2
 19. Search Insert Position
 20. Binary Search
-21.
-
-LINK: [https://www.linkedin.com/feed/update/urn:li:activity:7149968161226792960/?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7149968161226792960%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29]
+21. 
