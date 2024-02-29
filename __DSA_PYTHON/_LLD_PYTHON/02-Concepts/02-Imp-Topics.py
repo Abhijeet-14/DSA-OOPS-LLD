@@ -1,5 +1,3 @@
-from abc import ABC, abstractmethod
-
 """
 1. OOPs
 2. SOLID
@@ -22,6 +20,8 @@ D - Dependency Inversion Principle
 - Reduce Complexity
 """
 
+
+from abc import ABC, abstractmethod
 
 ########################
 # S - Single Responsibility Principle
