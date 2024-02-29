@@ -246,6 +246,16 @@ class BiCycle(Bike):
 2.) goToTrip( biCycle) -> turnOnEngine() -> it breaks
 so,
 It has reduce the feature of Bike, only accelare is working.
+
+Solution? 
+in interface only keep generic feat, and later extend it to feat class
+Vehicle( accelerate())
+EngineVehicle extend Vechile (hasEngine() & accelerate())
+NonEngineVehicle extend Vechile (accelerate())
+
+So, 
+Car extend EngineVehicle(hasEngine() && acceleare())
+BiCycle extend NonEngineVehicle(acceleare())
 """
 
 
@@ -299,12 +309,122 @@ Solution:
 
 
 class WaiterEmployee(ABC):
-    pass
+    @abstractmethod
+    def server_customer(self):
+        pass
+
+    @abstractmethod
+    def take_order(self):
+        pass
 
 
 class ChefEmployee(ABC):
-    pass
+    @abstractmethod
+    def cook_food(self):
+        pass
+
+    @abstractmethod
+    def decide_menu(self):
+        pass
 
 
 class HelperEmployee(ABC):
+    @abstractmethod
+    def wash_dishes(self):
+        pass
+
+
+class Waiter(WaiterEmployee):
+    def server_customer(self):
+        print("Serving customer")
+
+    def take_order(self):
+        print("taking orders")
+
     pass
+
+
+########################
+# D - Dependency Inversion Principle
+########################
+"""
+D - class should Depend ON INTERFACES - not Concreate classes.
+
+Problem: suppose you have:
+    - Keyboard interface 
+         -> WiredKeyboard concreate class
+         -> BluetoothKeyboard concreate class
+    - Mouse interface 
+         -> WiredMouse concreate class
+         -> BluetoothMouse concreate class
+"""
+
+
+class Keyboard(ABC):
+    pass
+
+
+class MouseKeyboard(Keyboard):
+    pass
+
+
+class WiredKeyboard(Keyboard):
+    pass
+
+
+class BlueToothKeyboard(Keyboard):
+    pass
+
+
+class Mouse(ABC):
+    pass
+
+
+class WiredMouse(ABC):
+    pass
+
+
+class BlueToothMouse(ABC):
+    pass
+
+
+class KeyboardMouse(ABC):
+    pass
+
+
+"""
+now a Macbook class create
+    has a -> WiredKeyboard
+    has a -> MouseKeyboard
+so now this Macbook, can't be used for BluetoothKeyboard or BluetoothMouse
+Bcoz it depends on Conreate class 'Wired....'
+"""
+
+
+class Macbook:
+    def __init__(self):
+        self.mouse = WiredMouse()
+        self.keyboard = WiredKeyboard()
+
+
+"""
+so use interface, instead of Concreate class
+"""
+
+
+class Macbook:
+    def __init__(self, keyboard: Keyboard, mouse: Mouse):
+        self.mouse = mouse
+        self.keyboard = keyboard
+
+
+################################################
+
+################################################
+""" Cheatsheet
+SIP - 1 class -> 1 responsibility
+O/C - use Interface
+LSP - interfac -> class A & class B -> if feat(A) ke jagha feat(B) ho -- then feat should work as expected -- no removing of functionality. break interface to feat class
+ISP - break interface into small-small -> class only use required one.
+DIP - use interface, not concreate class of interface
+"""
