@@ -65,6 +65,13 @@ Why Join?
 
 ### 1. AWS Marketplace Seller:
 
+#### Original Resource:
+
+- Catlog API - in BetaV by AWS since March 2023 - [https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html]
+- AWS MP Blog - [https://aws.amazon.com/blogs/awsmarketplace/automation-with-aws-marketplace-apis/]
+- App - [https://62kgngrqk4.us-east-1.awsapprunner.com/home]
+- ReInvent Video - [https://www.youtube.com/watch?v=tAUrUBcRSlk&ab_channel=AWSEvents]
+
 #### Gaurav Definination:
 
     1. Deloitte has a good reach to customers and creation of this kind of platform will help AWS to get more business.
