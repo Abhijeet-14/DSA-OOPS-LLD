@@ -1,3 +1,5 @@
+# Structural DP
+
 # Walmart Interview Question
 # In Amazon, "notify me" when certain subsribed product is available or out of stock.
 

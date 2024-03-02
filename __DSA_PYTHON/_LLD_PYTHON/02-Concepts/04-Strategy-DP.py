@@ -1,13 +1,20 @@
+# Structural DP
 from abc import ABC, abstractmethod
 
 #################################
 # Strategy Design Pattern
 #################################
-# Is-A => Inheritance of class X
-# Has-A => contain class X as variable
+
+
+#################
+"""
+What is "IS_A" & "HAS_A"??
+    - Is-A => Inheritance of class X
+    - Has-A => contain class X as variable
+"""
 
 """ Problem:
-When only pure Inheritence causes issue. How it causes issue in Scaling. 
+When only pure Inheritence causes issue. But, How it causes issue in Scaling. 
 
 Whenever, child is inheriting parent -- doing duplicate code by child -- use strategy pattern.
 In Simple,
