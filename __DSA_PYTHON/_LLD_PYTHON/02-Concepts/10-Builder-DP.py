@@ -6,7 +6,35 @@
 """
 - it is a CREATIONAL design pattern -- helps in Creation of an Object.
 
-- PROBLEM:
+- Builder - create object STEP-By-STEP
+
+- PROBLEM: Suppose you have a class with Required & Optional parameter, total 100 parameters
+    1. Huge Constructor's paramter
+        - object - with multiple Parameter - Required & Optional
+        - say we have 100 parameters
+        - so constructor becomes huge
+
+    2. Multiple Object Creation Constructor
+        - as we have optional parameter -- so we can create object in multiple permutaion of parameters
+        - Student(roll, name) or Student(roll, name, age) or Student(roll, age) ...... 
+        - so mutiple object combination of constructor
+
+- SOLUTION:
+    - Builder DP, it is Step-By-Step object creation
+    - example: - building a house
+        - first build walls -- return Under-Construction House
+        - then build Roof -- return Under-Construction House
+        - then build Gate -- return Under-Construction House
+        - then build Window -- return Under-Construction House
+        - ...
+        - at each step we are getting 'Under-Construction House'
+        - now build this 'Under-Construction House' -> 'Ready House'
+
+        - so we build 'Ready-House' step-by-step adding component of it.
+
+    - so eariler -- we direct build 'Ready House'
+    - but here -- we add compo in 'Under-Construction' 
+    -> and finally called - build -- we build actual 'Ready House'
 
 """
 
@@ -67,7 +95,9 @@ class CustomizeComputerBuilder(ABC, CustomizeComputer):
         pass
 
     def build(self):
-        self.computer = CustomizeComputer(
+        if not self.name:
+            raise Exception("You need to add compoents first")
+        return CustomizeComputer(
             self.name,
             self.mouse,
             self.keyboard,
@@ -75,7 +105,6 @@ class CustomizeComputerBuilder(ABC, CustomizeComputer):
             self.storage,
             self.screen,
         )
-        return self.computer
 
 
 class GameComputer(CustomizeComputerBuilder):
@@ -119,3 +148,30 @@ office = Director.construct(office_pc)
 
 print(game)
 print(office)
+
+
+###########
+# Diff bw Builder DP & Decorator DP
+###########
+"""
+Decorator & Builder looks same but Builder has some problem
+
+- in Decorator DP -
+    - any combination of object can be created
+    - WITHOUT creating specific class of that Combination.
+    - Chicken(cheese(Spicy(BasePizza())))
+    - without cheese - Chicken(Spicy(BasePizza()))
+
+- in Builder DP -
+    - any combination of object can be created
+    - BUT, need to create specific class of that Combination.
+    - for same combo
+        - class ChickenCheeseSpicyPizza():
+            // add_chicken, add_cheese, add_spicy
+    - if want only chicken Spicy
+        - class ChickenSpicyPizza():
+            // add_chicken,  add_spicy
+
+            
+- So Decorator - give Dynamic combo of objects
+"""

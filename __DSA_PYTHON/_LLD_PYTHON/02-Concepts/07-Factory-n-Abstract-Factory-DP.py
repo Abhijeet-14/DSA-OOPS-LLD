@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 """ 
 - Creational Design Pattern -- responsible to CREATE objects.
 
-- Factory -- create object based on Condition=
+- Factory -- create object based on CONDITION
 
 - Jaha bhi object create karna hai -- but on basis of some condition -> Factory DP
 
