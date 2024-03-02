@@ -4,6 +4,10 @@ from abc import ABC, abstractmethod
 # Factory & Abstract Factory Design Pattern
 ########################################
 """ 
+- Creational Design Pattern -- responsible to CREATE objects.
+
+- Factory -- create object based on Condition=
+
 - Jaha bhi object create karna hai -- but on basis of some condition -> Factory DP
 
 -> condition 1 -> Rectange
@@ -140,3 +144,10 @@ class VehicleFactory_Ka_Factory:
             return OrdinaryFactory()
         else:
             return LuxaryFactory()
+
+
+class A:
+    _b = None
+
+    def __init__(self):
+        self._b = 2

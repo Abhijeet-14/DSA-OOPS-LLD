@@ -80,6 +80,9 @@ class PieceType(Enum):
     O = auto()
     # Y = auto() # can add new type
 
+    def __str__(self):
+        return self.name
+
 
 class Piece:
     def __init__(self, piece_type: PieceType):
@@ -114,7 +117,7 @@ class Board:
         if self.board[row][col] != -1:
             return False
 
-        self.board[row][col] = playing_piece.piece_type.name
+        self.board[row][col] = playing_piece.piece_type
         return True
 
     def find_free_space(self):
@@ -160,11 +163,11 @@ class Game:
                 break
 
             print(f"Player {current_player.name}, its your turn: ")
-            current_player_input = list(map(int, input().split(" ")))
+            x, y = list(map(int, input().split(" ")))
 
             is_piece_added_to_board: bool = self.board.add_piece(
-                current_player_input[0],
-                current_player_input[1],
+                x,
+                y,
                 current_player.playing_piece,
             )
 
@@ -176,16 +179,15 @@ class Game:
             self.players.append(current_player)
 
             is_winner = self.is_there_any_winner(
-                current_player_input[0],
-                current_player_input[1],
-                current_player.playing_piece.piece_type,
+                x,
+                y,
+                current_player.playing_piece,
             )
             if is_winner:
                 print(f"{current_player.name} has won!")
 
-    def is_there_any_winner(self, row, col, piece_type: PieceType):
-
-        piece_type = piece_type.name
+    def is_there_any_winner(self, row, col, player_piece: Piece):
+        piece_type = player_piece.piece_type
 
         row_match = True
         col_match = True
