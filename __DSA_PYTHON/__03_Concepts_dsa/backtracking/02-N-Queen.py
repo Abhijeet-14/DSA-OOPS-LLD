@@ -44,14 +44,15 @@ def is_safe(board, col, row):
 
 
 def place_queens(board, col):
+    """BruteForce: TC-O(N!), is_safe() TC-O(N)"""
     N = len(board)
 
     # Edge Case: Important
     if col >= N:
         return True
 
-    for row in range(N):
-        if is_safe(board, col, row):
+    for row in range(N):  # 4*3*2*1 = O(N!)
+        if is_safe(board, col, row):  # O(N)
             board[row][col] = "Q"
             if place_queens(board, col + 1):
                 return True
@@ -62,11 +63,10 @@ def place_queens(board, col):
     return False
 
 
-print("Enter value of N: ")
-n = int(input())
+n = 4
 
 # Impt: else row points to same column
 board = [[-1] * n for _ in range(n)]
 place_queens(board, 0)
-
+print("BruteForce: TC-O(N!), is_safe() TC-O(N)")
 print_board(board)
