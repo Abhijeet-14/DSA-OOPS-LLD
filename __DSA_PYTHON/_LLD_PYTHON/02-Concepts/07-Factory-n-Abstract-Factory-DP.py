@@ -7,6 +7,7 @@ from abc import ABC, abstractmethod
 - Creational Design Pattern -- responsible to CREATE objects.
 
 - Factory -- create object based on CONDITION
+- when -- when all object creation & its business logic need to keep in 1 place.
 
 - Jaha bhi object create karna hai -- but on basis of some condition -> Factory DP
 
@@ -137,8 +138,8 @@ class OrdinaryFactory(VehicleFactory):
 # Now a Factory -- to chose bw LuxaryFactory & NormalFactory.
 # So, "Factory ka Factory"
 class VehicleFactory_Ka_Factory:
-    # "HAS_A" VechicleFactory
 
+    # "HAS_A" VechicleFactory
     def get_shape(self, is_condition):
         if is_condition:
             return OrdinaryFactory()
