@@ -104,9 +104,6 @@ class ErrorHandler(LogHandler):
             super().log(log_level, message)
 
 
-ad
-
-
 def client():
     logger: LogHandler = InfoHandler(DebugHandler(ErrorHandler(None)))
 
