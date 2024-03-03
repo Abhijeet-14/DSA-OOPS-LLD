@@ -97,5 +97,10 @@ def client():
     print("Seat Capactity: ", vehicle.get_seating_capacity())
     print("Fuel-Tank Capactity: ", vehicle.get_fuel_capacity())
 
+    print("\nNull Object")
+    nullVehicle: Vehicle = VehicleFactory().get_vehicle_object("BIKE")
+    print("Seat Capactity: ", nullVehicle.get_seating_capacity())
+    print("Fuel-Tank Capactity: ", nullVehicle.get_fuel_capacity())
+
 
 client()
