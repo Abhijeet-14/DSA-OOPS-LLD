@@ -145,10 +145,3 @@ class VehicleFactory_Ka_Factory:
             return OrdinaryFactory()
         else:
             return LuxaryFactory()
-
-
-class A:
-    _b = None
-
-    def __init__(self):
-        self._b = 2
