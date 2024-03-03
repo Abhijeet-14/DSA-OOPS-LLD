@@ -16,7 +16,7 @@
 
     2. Multiple Object Creation Constructor
         - as we have optional parameter -- so we can create object in multiple permutaion of parameters
-        - Student(roll, name) or Student(roll, name, age) or Student(roll, age) ...... 
+        - Student(roll, name) or Student(roll, name, age) or Student(roll, age) ......
         - so mutiple object combination of constructor
 
 - SOLUTION:
@@ -33,7 +33,7 @@
         - so we build 'Ready-House' step-by-step adding component of it.
 
     - so eariler -- we direct build 'Ready House'
-    - but here -- we add compo in 'Under-Construction' 
+    - but here -- we add compo in 'Under-Construction'
     -> and finally called - build -- we build actual 'Ready House'
 
 """
@@ -51,11 +51,11 @@ class CustomizeComputer:
         self.keyboard = keyboard
 
     def __str__(self):
-        return f"""Computer: {self.name}(
+        return f"""Computer: {self.name} (
             mouse={self.mouse} 
-            screen={self.screen}
-            storage={self.storage}
-            ram={self.ram}
+            screen={self.screen} 
+            storage={self.storage} 
+            ram={self.ram} 
             keyboard={self.keyboard}
         )
         """
@@ -65,29 +65,31 @@ from abc import ABC, abstractmethod
 
 
 class CustomizeComputerBuilder(ABC, CustomizeComputer):
+    def __init__(self):
+        self.computer = CustomizeComputer()
 
     def add_name(self, name):
-        self.name = name
+        self.computer.name = name
         return self
 
     def add_mouse(self, mouse):
-        self.mouse = mouse
+        self.computer.mouse = mouse
         return self
 
     def add_screen(self, screen):
-        self.screen = screen
+        self.computer.screen = screen
         return self
 
     def add_storage(self, storage):
-        self.storage = storage
+        self.computer.storage = storage
         return self
 
     def add_ram(self, ram):
-        self.ram = ram
+        self.computer.ram = ram
         return self
 
     def add_keyboard(self, keyboard):
-        self.keyboard = keyboard
+        self.computer.keyboard = keyboard
         return self
 
     @abstractmethod
@@ -95,16 +97,9 @@ class CustomizeComputerBuilder(ABC, CustomizeComputer):
         pass
 
     def build(self):
-        if not self.name:
+        if not self.computer.name:
             raise Exception("You need to add compoents first")
-        return CustomizeComputer(
-            self.name,
-            self.mouse,
-            self.keyboard,
-            self.ram,
-            self.storage,
-            self.screen,
-        )
+        return self.computer
 
 
 class GameComputer(CustomizeComputerBuilder):
@@ -116,7 +111,6 @@ class GameComputer(CustomizeComputerBuilder):
         self.add_ram("Gaming ram")
         self.add_storage("Gaming storage")
         self.add_screen("Gaming screen")
-        return self
 
 
 class OfficeComputer(CustomizeComputerBuilder):
@@ -128,7 +122,7 @@ class OfficeComputer(CustomizeComputerBuilder):
         # self.add_ram("Office ram")
         # self.add_storage("Office storage")
         self.add_screen("Office screen")
-        return self
+        # return self
 
 
 class Director:
@@ -140,13 +134,14 @@ class Director:
 game_pc = GameComputer()
 game_pc.set_computer_components("Gaming PC101")
 
+game = Director.construct(game_pc)
+print(game)
+
+
 office_pc = OfficeComputer()
 office_pc.set_computer_components("Office PC101")
 
-game = Director.construct(game_pc)
 office = Director.construct(office_pc)
-
-print(game)
 print(office)
 
 
@@ -172,6 +167,64 @@ Decorator & Builder looks same but Builder has some problem
         - class ChickenSpicyPizza():
             // add_chicken,  add_spicy
 
-            
+
 - So Decorator - give Dynamic combo of objects
 """
+
+
+# # Product
+# class Product:
+#     def __init__(self):
+#         self.parts = []
+
+#     def add_part(self, part):
+#         self.parts.append(part)
+
+#     def show(self):
+#         print("Product Parts:", ", ".join(self.parts))
+
+
+# # Builder Interface
+# class Builder:
+#     def build_part_a(self):
+#         pass
+
+#     def build_part_b(self):
+#         pass
+
+#     def get_result(self):
+#         pass
+
+
+# # Concrete Builder
+# class ConcreteBuilder(Builder):
+#     def __init__(self):
+#         self.product = Product()
+
+#     def build_part_a(self):
+#         self.product.add_part("Part A")
+
+#     def build_part_b(self):
+#         self.product.add_part("Part B")
+
+#     def get_result(self):
+#         return self.product
+
+
+# # Director
+# class Director:
+#     def __init__(self, builder):
+#         self.builder = builder
+
+#     def construct(self):
+#         self.builder.build_part_a()
+#         self.builder.build_part_b()
+
+
+# # Client code
+# builder = ConcreteBuilder()
+# director = Director(builder)
+# director.construct()
+
+# product = builder.get_result()
+# product.show()
