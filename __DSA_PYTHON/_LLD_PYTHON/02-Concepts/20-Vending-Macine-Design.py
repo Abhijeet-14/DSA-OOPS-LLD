@@ -1,5 +1,9 @@
 """
 Design A Vending Machine
+- Follow MVC
+    - M - VendingMachine etc
+    - C - VendingMachineManager
+    - View - client()
 """
 
 from enum import Enum, auto
@@ -108,7 +112,7 @@ class StateInterface(ABC):
         return f"{self.name}"
 
 
-class VendingMachine:
+class VendingMachine:  # Model
     def __init__(self, inventory: Inventory, state: StateInterface):
         self.inventory: Inventory = inventory
         self.coin_list: list[Coin] = []
@@ -187,7 +191,7 @@ class VendingMachine:
         print("Selected product is out of stock")
 
 
-class VendingMachineManager:
+class VendingMachineManager:  # Collector
 
     def __init__(self, machine: VendingMachine):
         self.machine: VendingMachine = machine
@@ -323,7 +327,7 @@ class IdleSTATE(StateInterface):
         return super().insert_coin(machine, coin)
 
 
-def vending_machine_client():
+def vending_machine_client():  # View
     coin_ONE = Coin(CoinType.ONE)
     coin_TWO = Coin(CoinType.TWO)
     coin_FIVE = Coin(CoinType.FIVE)
