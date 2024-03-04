@@ -140,6 +140,54 @@
     - cancel
 """
 
+from abc import ABC, abstractmethod
+
+
+# State interface
+class TrafficLightState(ABC):
+    @abstractmethod
+    def handle(self):
+        pass
+
+
+# ConcreteState classes
+class RedState(TrafficLightState):
+    def handle(self):
+        return "Stop, the light is red."
+
+
+class YellowState(TrafficLightState):
+    def handle(self):
+        return "Prepare to stop, the light is yellow."
+
+
+class GreenState(TrafficLightState):
+    def handle(self):
+        return "Go, the light is green."
+
+
+# Context class
+class TrafficLight:
+    def __init__(self):
+        # Default state is Red
+        self.state = RedState()
+
+    def change_state(self, new_state):
+        self.state = new_state
+
+    def request(self):
+        return self.state.handle()
+
+
+# Example usage
+traffic_light = TrafficLight()
+print(traffic_light.request())  # Output: Stop, the light is red.
+
+traffic_light.change_state(YellowState())
+print(traffic_light.request())  # Output: Prepare to stop, the light is yellow.
+
+traffic_light.change_state(GreenState())
+print(traffic_light.request())  # Output: Go, the light is green.
 
 """ Diff bw State-DP & Chain Of Responsibilit-DP
 - State DP:
