@@ -20,6 +20,13 @@ class Coin:
         return self.coin_type.value
 
 
+class VendingMachineStateType(Enum):
+    IDLE = auto()
+    HAS_MONEY = auto()
+    SELECT_PRODUCT = auto()
+    DELIVER_PRODUCT = auto()
+
+
 class ItemType(Enum):
     COKE = auto()
     PEPSI = auto()
@@ -90,14 +97,6 @@ class StateInterface(ABC):
         self.raise_default_err()
 
     @abstractmethod
-    def get_product(self):
-        self.raise_default_err()
-
-    @abstractmethod
-    def get_change(self):
-        self.raise_default_err()
-
-    @abstractmethod
     def deliver_product_to_client(self, machine):
         self.raise_default_err()
 
@@ -105,12 +104,8 @@ class StateInterface(ABC):
     def cancel_button(self, machine):
         self.raise_default_err()
 
-    @abstractmethod
-    def refund_change(self):
-        self.raise_default_err()
-
     def __str__(self):
-        return f"\nVending Machine state: {self.name}"
+        return f"{self.name}"
 
 
 class VendingMachine:
@@ -120,7 +115,34 @@ class VendingMachine:
         self.state: StateInterface = state
         self.product_to_be_deliver: Item = None
 
+    def insert_cash_button_request(self):
+        self.get_vending_machine_state()
+        self.state.insert_cash_button(self)
+
+    def insert_coin_request(self, coin: Coin):
+        self.get_vending_machine_state()
+        self.state.insert_coin(self, coin)
+
+    def select_product_button_request(self):
+        self.get_vending_machine_state()
+        self.state.select_product_button(self)
+
+    def cancel_button_request(self):
+        self.get_vending_machine_state()
+        self.state.cancel_button(self)
+
+    def choose_product_request(self, product_code):
+        self.get_vending_machine_state()
+        self.state.choose_product(self, product_code)
+
+    def deliver_product_to_client_request(self):
+        self.get_vending_machine_state()
+        self.state.deliver_product_to_client(self)
+
+        self.get_vending_machine_state()
+
     def get_vending_machine_state(self):
+        print("\nVending Machine State: ", self.state)
         return self.state
 
     def set_vending_machine_state(self, state: StateInterface):
@@ -144,8 +166,9 @@ class VendingMachine:
     def refund_amount(self) -> int:
         amount_to_refund = self.get_sum_of_coins()
         self.set_vending_machine_coin_list([])
-        self.set_vending_machine_state(IdleSTATE("IDLE"))
-        return amount_to_refund
+        self.set_vending_machine_state(IdleSTATE())
+
+        print(f"Refunding the amount: {amount_to_refund}")
 
     def set_product_to_deliver(self, item):
         self.product_to_be_deliver = item
@@ -156,7 +179,7 @@ class VendingMachine:
             if item_shelf.item == self.product_to_be_deliver:
                 item_shelf.deliver_item()
                 self.set_vending_machine_coin_list([])
-                self.set_vending_machine_state(IdleSTATE)
+                self.set_vending_machine_state(IdleSTATE())
                 print(
                     f"Please collect your product: {self.product_to_be_deliver.item_type}"
                 )
@@ -165,8 +188,10 @@ class VendingMachine:
 
 
 class DeliverSTATE(StateInterface):
-    def __init__(self, name):
-        super().__init__(name, "Deliver product is in progress")
+    def __init__(self):
+        super().__init__(
+            VendingMachineStateType.DELIVER_PRODUCT, "Deliver product is in progress"
+        )
 
     def insert_cash_button(self, machine: VendingMachine):
         super().insert_cash_button()
@@ -180,27 +205,19 @@ class DeliverSTATE(StateInterface):
     def choose_product(self, product_code, machine):
         super().choose_product()
 
-    def get_product(self):
-        super().get_product()
-
     def deliver_product_to_client(self, machine: VendingMachine):
         machine.deliver_product()
-
-    def get_change(self):
-        super().get_change()
 
     def cancel_button(self, machine: VendingMachine):
         super().cancel_button(machine)
         print("Cancelling not allowed")
 
-    def refund_change(self, machine: VendingMachine):
-        super().refund_change()
-        print("Refund not allowed")
-
 
 class SelectProductSTATE(StateInterface):
-    def __init__(self, name):
-        super().__init__(name, "Select product is in progress")
+    def __init__(self):
+        super().__init__(
+            VendingMachineStateType.SELECT_PRODUCT, "Select product is in progress"
+        )
 
     def insert_cash_button(self, machine: VendingMachine):
         super().insert_cash_button()
@@ -224,7 +241,7 @@ class SelectProductSTATE(StateInterface):
             print(
                 f"Insufficent amount paid, required {selected_item.price}. Order cancelled"
             )
-            self.refund_change(machine)
+            machine.refund_amount()
             return
 
         machine.set_product_to_deliver(selected_item)
@@ -232,10 +249,7 @@ class SelectProductSTATE(StateInterface):
         amount_to_return = self.get_change(total_amount_paid, machine)
         print("Returing amount: ", amount_to_return)
 
-        machine.set_vending_machine_state(DeliverSTATE("DELIVER_PRODUCT"))
-
-    def get_product(self):
-        super().get_product()
+        machine.set_vending_machine_state(DeliverSTATE())
 
     def deliver_product_to_client(self, machine: VendingMachine):
         return super().deliver_product_to_client(machine)
@@ -245,16 +259,14 @@ class SelectProductSTATE(StateInterface):
 
     def cancel_button(self, machine: VendingMachine):
         print("Cancelling order")
-        return self.refund_change(machine)
-
-    def refund_change(self, machine: VendingMachine):
-        amount_to_be_refund = machine.refund_amount()
-        print(f"Refunding the amount: {amount_to_be_refund}")
+        machine.refund_amount()
 
 
 class HasMoneySTATE(StateInterface):
-    def __init__(self, name):
-        super().__init__(name, "Insert Coin operation is in progress")
+    def __init__(self):
+        super().__init__(
+            VendingMachineStateType.HAS_MONEY, "Insert Coin operation is in progress"
+        )
 
     def insert_cash_button(self, machine):
         return super().insert_cash_button(machine)
@@ -265,43 +277,29 @@ class HasMoneySTATE(StateInterface):
 
     def select_product_button(self, machine: VendingMachine):
         print("Activating 'select product button'")
-        machine.set_vending_machine_state(SelectProductSTATE("SELECT_PRODUCT"))
+        machine.set_vending_machine_state(SelectProductSTATE())
 
     def choose_product(self, product_code, machine):
         return super().choose_product(product_code, machine)
-
-    def get_product(self):
-        return super().get_product()
-
-    def get_change(self):
-        return super().get_change()
 
     def deliver_product_to_client(self, machine: VendingMachine):
         return super().deliver_product_to_client(machine)
 
     def cancel_button(self, machine: VendingMachine):
         print("Cancelling order")
-        return self.refund_change(machine)
-
-    def refund_change(self, machine: VendingMachine):
-        amount_to_be_refund = machine.refund_amount()
-        print(f"Refunding the amount: {amount_to_be_refund}")
+        machine.refund_amount()
 
 
 class IdleSTATE(StateInterface):
-    def __init__(self, name):
-        self.name = name
-        self.default_err_msg = "Machine is IDLE, click Insert Cash Button first"
+    def __init__(self):
+        super().__init__(
+            VendingMachineStateType.IDLE,
+            "Machine is IDLE, click Insert Cash Button first",
+        )
 
     def insert_cash_button(self, machine: VendingMachine):
         machine.set_vending_machine_coin_list([])
-        machine.set_vending_machine_state(HasMoneySTATE("HAS_MONEY"))
-
-    def get_change(self):
-        return super().get_change()
-
-    def get_product(self):
-        return super().get_product()
+        machine.set_vending_machine_state(HasMoneySTATE())
 
     def select_product_button(self, machine):
         return super().select_product_button(machine)
@@ -311,9 +309,6 @@ class IdleSTATE(StateInterface):
 
     def cancel_button(self, machine):
         return super().cancel_button(machine)
-
-    def refund_change(self):
-        return super().refund_change()
 
     def deliver_product_to_client(self, machine: VendingMachine):
         return super().deliver_product_to_client(machine)
@@ -342,33 +337,28 @@ def vending_machine_client():
     inventory.add_item_shelfes(item_shelf_two)
     inventory.add_item_shelfes(item_shelf_three)
 
-    machine = VendingMachine(inventory, IdleSTATE("IDLE"))
+    machine = VendingMachine(inventory, IdleSTATE())
     print("Vending Machine Inventory is ready")
 
-    current_state: StateInterface = machine.get_vending_machine_state()
-    print(current_state)
-    current_state.insert_cash_button(machine)
+    # current_state: StateInterface = machine.get_vending_machine_state()
+    machine.insert_cash_button_request()
+    # current_state.insert_cash_button(machine)
 
-    current_state = machine.get_vending_machine_state()
-    print(current_state)
-    current_state.insert_coin(machine, coin_TEN)
-    current_state.insert_coin(machine, coin_FIVE)
+    # current_state = machine.get_vending_machine_state()
+    machine.insert_coin_request(coin_TEN)
+    machine.insert_coin_request(coin_FIVE)
 
-    current_state = machine.get_vending_machine_state()
-    print(current_state)
-    current_state.select_product_button(machine)
-    # current_state.cancel_button(machine)
+    # current_state = machine.get_vending_machine_state()
+    machine.select_product_button_request()
+    machine.cancel_button_request()
 
-    current_state = machine.get_vending_machine_state()
-    print(current_state)
-    current_state.choose_product(102, machine)
+    # current_state = machine.get_vending_machine_state()
+    machine.choose_product_request(102)
 
-    current_state = machine.get_vending_machine_state()
-    print(current_state)
-    current_state.deliver_product_to_client(machine)
+    # current_state = machine.get_vending_machine_state()
+    machine.deliver_product_to_client_request()
 
-    current_state = machine.get_vending_machine_state()
-    print(current_state)
+    # current_state = machine.get_vending_machine_state()
 
 
 vending_machine_client()

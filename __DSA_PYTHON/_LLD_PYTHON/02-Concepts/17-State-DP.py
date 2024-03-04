@@ -152,31 +152,40 @@ class TrafficLightState(ABC):
 
 # ConcreteState classes
 class RedState(TrafficLightState):
-    def handle(self):
-        return "Stop, the light is red."
+    def handle(self, traffic_light):
+        return f"Stop, the light is red. @{traffic_light}"
 
 
 class YellowState(TrafficLightState):
-    def handle(self):
-        return "Prepare to stop, the light is yellow."
+    def handle(self, traffic_light):
+        return f"Prepare to stop, the light is yellow.@{traffic_light}"
 
 
 class GreenState(TrafficLightState):
-    def handle(self):
-        return "Go, the light is green."
+    def handle(self, traffic_light):
+        return f"Go, the light is green.@{traffic_light}"
 
 
 # Context class
 class TrafficLight:
+    _count = 1
+
     def __init__(self):
+        self.name = f"Tracif Light {TrafficLight._count}"
+
         # Default state is Red
         self.state = RedState()
+
+        TrafficLight._count += 1
 
     def change_state(self, new_state):
         self.state = new_state
 
     def request(self):
-        return self.state.handle()
+        return self.state.handle(self)
+
+    def __str__(self):
+        return self.name
 
 
 # Example usage
