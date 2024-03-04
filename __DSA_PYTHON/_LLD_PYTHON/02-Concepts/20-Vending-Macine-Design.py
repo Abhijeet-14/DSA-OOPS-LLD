@@ -133,7 +133,7 @@ class VendingMachine:
 
     def choose_product_request(self, product_code):
         self.get_vending_machine_state()
-        self.state.choose_product(self, product_code)
+        self.state.choose_product(product_code, self)
 
     def deliver_product_to_client_request(self):
         self.get_vending_machine_state()
@@ -185,6 +185,12 @@ class VendingMachine:
                 )
                 return
         print("Selected product is out of stock")
+
+
+class VendingMachineManager:
+
+    def __init__(self, machine: VendingMachine):
+        self.machine: VendingMachine = machine
 
 
 class DeliverSTATE(StateInterface):
@@ -350,7 +356,7 @@ def vending_machine_client():
 
     # current_state = machine.get_vending_machine_state()
     machine.select_product_button_request()
-    machine.cancel_button_request()
+    # machine.cancel_button_request()
 
     # current_state = machine.get_vending_machine_state()
     machine.choose_product_request(102)
