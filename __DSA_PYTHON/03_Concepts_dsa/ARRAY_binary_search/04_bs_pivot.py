@@ -19,15 +19,17 @@ def binary_search(arr, target, start, end):
 
 
 def find_peek(arr):
-
+    N = len(arr)
     start = 0
-    end = len(arr) - 1
+    end = N - 1
 
     while start <= end:
         peek = (end + start) // 2
-        if arr[peek] > arr[peek - 1] and arr[peek] > arr[peek + 1]:
+        peek_minus_one = (peek - 1 + N) % N
+        peek_plus_one = (peek + 1) % N
+        if arr[peek] >= arr[peek_minus_one] and arr[peek] >= arr[peek_plus_one]:
             return peek
-        elif arr[peek] >= arr[end]:
+        elif arr[peek] > arr[end]:
             start = peek + 1
         else:
             end = peek - 1
