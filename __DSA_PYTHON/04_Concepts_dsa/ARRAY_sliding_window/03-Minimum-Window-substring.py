@@ -40,7 +40,8 @@ class Solution:
                     - decrease occurrance 's' per char and delete if 0
                     - calculate min length bw curr_str & prev_min_str
                     - and update prev_min_str
-            -
+        Edge Case:
+            - len_s < len_t
         """
         N = len(s)
         if len(s) < len(t):
@@ -89,3 +90,45 @@ class Solution:
                 curr_str = curr_str[1:]
                 left += 1
         return min_str
+
+
+    def minWindow_2(self, s: str, t: str) -> str:
+        if len(s)<len(t): return ""
+        dict_t = {}
+        for ch in t:
+            dict_t[ch] = dict_t.get(ch, 0) + 1
+        
+        min_len = float("inf")
+        min_curr = ""
+        dict_s = {}
+
+        def match(ch_t):   
+            if ch_t not in dict_t: return False
+
+            if len(dict_t.keys()) != len(dict_s.keys()):
+                return False
+
+            for ch_q, val in dict_t.items():
+                if not dict_s.get(ch_q) or dict_s[ch_q]<val:
+                    return False
+            return True
+
+        # right index
+        l=0
+        for r in range(len(s)):
+            ch = s[r]
+            if ch in dict_t:
+                dict_s[ch] = dict_s.get(ch, 0) + 1
+         
+            while match(ch):
+                if min_len >= r-l+1:     
+                    min_len =  r-l+1
+                    min_curr = s[l:r+1]
+
+                if s[l] in dict_t:
+                    dict_s[s[l]] -= 1
+                    if dict_s[s[l]] == 0:
+                        del dict_s[s[l]]
+                l+=1 
+
+        return min_curr
