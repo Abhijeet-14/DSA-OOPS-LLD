@@ -1,3 +1,4 @@
+# DP - init, base-condi, recursion
 def maximal_square(matrix: list[list[str]]):
     """
     TC - O(N*M)
@@ -10,13 +11,16 @@ def maximal_square(matrix: list[list[str]]):
 
     def helper(r, c):
 
+        # base condi
         if r>=R or c>=C: return 0
 
         if (r,c) not in dp:
+            # recursion
             down = helper(r+1,c)
             right = helper(r,c+1)
             diag = helper(r+1, c+1)
 
+            # initalization
             dp[(r,c)] = 0
             if matrix[r][c] == "1":
                 dp[(r,c)] = 1 + min(down, right, diag)
