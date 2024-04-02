@@ -25,6 +25,9 @@
 - have its own indepenent DB and its type (SQL/NoSQL)
 - its own APIs (Sync[HTTP] or Async[Messaging_Queue])
 - ensure Fault-Tolerance by Retry mechanism and removing SPF(Single Point Of Failure)
+- add REST or Messaging Queue
+- add Load Balancer, Caching, and CDN
+- 
 
 ## Step 4: Data Management
 - give one Common ACID -- by SAGA
