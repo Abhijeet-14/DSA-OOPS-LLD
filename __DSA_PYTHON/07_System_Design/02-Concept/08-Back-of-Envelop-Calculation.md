@@ -88,6 +88,3 @@ Image - 1 MB
     - Storage - DB - 600 TB
             - S3 - 60 TB
     - No of server - 210 (for 21 K QPS)
-
-
-3. Ram
