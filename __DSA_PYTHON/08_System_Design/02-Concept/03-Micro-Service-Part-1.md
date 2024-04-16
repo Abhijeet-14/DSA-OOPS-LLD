@@ -6,7 +6,7 @@
 - Scalbility hard
 - Tight Coupled
 - hard to fix bug
-- if S1 is in Bn traffic, and rest S2, S3 is in K's only
+- if S1 is in 'Billion' traffic, and rest S2, S3 is in K's only
     - then unwantedly - just to scale S1 -- we end up scaling WHOLE service
 - 1 line code -- force re-deploy of 10 Gb code
 
