@@ -65,9 +65,9 @@
     - respo - End-2-End delivery of complete msg, ACK for success and in error re-transmits
     - TCP - every call need to establish connection in order to communicate
     - 3-Way Handsake: 
-        1. client send segment with SYN (Sync Seq No.)
-        2. server respond to client with SYN + ACK
-        3. client receive ACK, hence connection Success
+        1. SYN - client send segment with SYN (Sync Seq No.)
+        2. SYN+ACK - server respond to client with SYN + ACK
+        3. ACK - client receive ACK, hence connection Success
     - UDP - user datagram protocol
 5. Session
     - respo for connection establishment(Authentication)
