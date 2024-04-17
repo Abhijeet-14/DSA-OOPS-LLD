@@ -2,13 +2,13 @@
 - define rules, so 2 device can talk.
 
 # 7 Layer
-1. Application - UX
-2. Presentattion - data extracted
-3. Session - auth
-4. Transport - End-to-End delivery
-5. Network - transfer packet
-6. Data-Link - node-to-node delivery
-7. Physical - mac
+1. Application
+2. Presentattion
+3. Session
+4. Transport
+5. Network
+6. Data-Link
+7. Physical
 
 ## Application
 1. Client Server
