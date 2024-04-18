@@ -101,3 +101,11 @@ from functools import reduce
 
 product = reduce(lambda x, y: x + y, numbers)
 print("Reduce return int:", product)
+
+
+# Sort Array with custom function
+def custom_function(item):
+    return item[1]
+
+data = [('apple', 3), ('banana', 1), ('cherry', 2)]
+data.sort(key=custom_function)

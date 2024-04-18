@@ -79,3 +79,11 @@ print(absolute_value)
 print("\n=====SQUARE=====")
 x = 2
 print(x**2)
+
+
+# Sort Array with custom function
+def custom_function(item):
+    return item[1]
+
+data = [('apple', 3), ('banana', 1), ('cherry', 2)]
+data.sort(key=custom_function)

@@ -41,7 +41,7 @@ Solution:
 import threading
 
 
-class SingleMultiThreading:
+class SingletonMultiThreading:
     _instance = None
     _lock = threading.Lock()
 
@@ -50,18 +50,18 @@ class SingleMultiThreading:
         """We check 2 time with threads"""
 
         # Request_1 & Request_2 - come here
-        if not SingleMultiThreading._instance:
+        if not SingletonMultiThreading._instance:
             # Request_1 locks 1st # Request_2 locks
-            with SingleMultiThreading._lock:
+            with SingletonMultiThreading._lock:
                 # Request_1 check 1st -> True # Request_2 check -> False
-                if not SingleMultiThreading._instance:
+                if not SingletonMultiThreading._instance:
                     # Request_1 create it.
-                    SingleMultiThreading._instance = SingleMultiThreading()
-        return SingleMultiThreading._instance
+                    SingletonMultiThreading._instance = SingletonMultiThreading()
+        return SingletonMultiThreading._instance
 
 
 def create_singleton_multi_threading_instance():
-    singleton_multi_threading_instance = SingleMultiThreading.get_instance()
+    singleton_multi_threading_instance = SingletonMultiThreading.get_instance()
     print(f"Singleton MT instance: {singleton_multi_threading_instance}")
 
 
