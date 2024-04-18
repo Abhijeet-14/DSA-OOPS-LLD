@@ -103,13 +103,8 @@ ALTER TABLE student DROP COLUMN likes;9
 
 
 
-
-UPDATE
-    your_table
-SET
-    your_column = 2
-WHERE
-    id > 2;
+-- UPDATE
+UPDATE your_table SET your_column = 2 WHERE id > 2;
 
 -- WHERE - why?
 -- Used to filter rows before they are grouped.
