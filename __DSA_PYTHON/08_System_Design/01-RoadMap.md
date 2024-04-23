@@ -1,13 +1,14 @@
-# System Design
+# [System Design]()
 
 - Alex-XU
   - Vol_1: [https://drive.google.com/file/d/1u9CNDKFF5NE_d5OKwFFLUJCuOUrXUdln/view]
   - Vol_2: [https://drive.google.com/file/d/1uDW6YZAb6h8NBQ9g-PUVnurzjCBVTSi7/view]
+
 - Ashish Pratap Singh 
   - [https://www.linkedin.com/in/ashishps1/recent-activity/all/]
 
 
-# [📌 System Design Key Concepts](https://github.com/ashishps1/awesome-system-design-resources/tree/main) 
+## [📌 System Design Key Concepts](https://github.com/ashishps1/awesome-system-design-resources/tree/main) 
 - [Top 15 Tradeoffs](https://newsletter.ashishps.com/p/system-design-top-15-trade-offs)
 - [Scalability](https://newsletter.ashishps.com/p/scalability)
 - [Latency vs Throughput](https://newsletter.ashishps.com/p/scalability)
@@ -27,7 +28,7 @@
 - [Disaster Recovery](https://cloud.google.com/learn/what-is-disaster-recovery)
 - [Distributed Tracing](https://www.dynatrace.com/news/blog/what-is-distributed-tracing/)
 
-# [🛠️ System Design Building Blocks](https://github.com/ashishps1/awesome-system-design-resources/tree/main)
+## [🛠️ System Design Building Blocks](https://github.com/ashishps1/awesome-system-design-resources/tree/main)
 [Vertical vs Horizontal Scaling](https://newsletter.ashishps.com/p/system-design-vertical-vs-horizontal-scaling)
 - [Databases](https://newsletter.ashishps.com/p/15-types-of-databases)
 - [Content Delivery Network (CDN)](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
@@ -56,7 +57,7 @@
 - [Checksum](https://www.lifewire.com/what-does-checksum-mean-2625825)
 
 
-# [🖇️ System Design Architectural Patterns](https://github.com/ashishps1/awesome-system-design-resources/tree/main)
+## [🖇️ System Design Architectural Patterns](https://github.com/ashishps1/awesome-system-design-resources/tree/main)
 - [Client-Server Architecture](https://www.redswitches.com/blog/client-server-architecture/)
 - [Microservices Architecture](https://medium.com/hashmapinc/the-what-why-and-how-of-a-microservices-architecture-4179579423a9)
 - [Serverless Architecture](https://www.datadoghq.com/knowledge-center/serverless-architecture/)
@@ -66,12 +67,12 @@
 
 
 
-# Course:
+## Course:
 
 1. [https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers]
 2. [https://takeuforward.org/system-design/complete-system-design-roadmap-with-videos-for-sdes/]
 
-# Resource
+## Resource
 1. [https://www.linkedin.com/feed/update/urn:li:activity:7171037345561993216?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7171037345561993216%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29]
 2. [https://www.linkedin.com/feed/update/urn:li:activity:7170753038389825536?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7170753038389825536%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29]
 3. [https://www.linkedin.com/feed/update/urn:li:activity:7160581643735293953?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7160581643735293953%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29]
