@@ -35,8 +35,10 @@ MOD: it give index in the hashtable
 
 - this Re-Balance -- is very expensive -- assume happening on Billion RPS.
 - Solution, Consisten Hahsing
+    - allow only [(1/N)%] of Re-Balancing
 
 ## Consistent Hashing
+- allow only [(1/N)%] of Re-Balancing
 - it take [Virtual-Ring]()
     - say 256 point is there
     - having Service at 4 points (S1, S2, S3, S4)
@@ -57,3 +59,8 @@ MOD: it give index in the hashtable
         - ![alt text](image-1.png)
     - now Load is distrubted EVENLY -- even after On-Off any service
 
+## Use:
+- CH is used in:
+    - Load Balancer -- distribute to servers
+    - Horizontal Sharding -- DB
+    - Cache Pool allotment
