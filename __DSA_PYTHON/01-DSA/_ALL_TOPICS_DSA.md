@@ -26,8 +26,8 @@
    - Bubble Sort
    - Selection Sort
    - Insertion Sort
-   - Merge Sort
-   - Quick Sort
+   - Merge Sort *
+   - Quick Sort *
    - Heap Sort
    - Radix Sort
 2. Searching Algorithms
