@@ -1,6 +1,11 @@
 
 # [Roadmap]()
 
+# [Time Complexity]()
+![Big-O chart](../../___image/image-40.png)
+![DS Operatiosn](../../___image/image-41.png)
+![array sorting algos](../../___image/image-42.png)
+
 ## [Recursion](https://leetcode.com/discuss/study-guide/1733447/become-master-in-recursion)
 ![alt text](../../___image/image-35.png)
 
