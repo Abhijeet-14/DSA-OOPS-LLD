@@ -36,12 +36,13 @@ def my_soution_1(arr):
 
 def leetcode_sol(nums: list[int]) -> int:
     """
+    Kind of - cyclic sort 
     TC - O(N)
     SC - O(1)
     Approach:
         - 2 task
         - step 1: alot to right index
-            - place integer i at num[i]-1 place
+            - place integer i at num[i]-1 place, correct position
             - 
         - step 2: get missing
             - iterate 1 -> n
@@ -60,7 +61,7 @@ def leetcode_sol(nums: list[int]) -> int:
         # if we have all integer at correct place, so 1<=nums[i] <=n
         while 1 <= nums[i] <= n:
             if nums[i] == nums[nums[i] - 1]:
-                # correct integer - at correct index
+                # correct integer - at correct position
                 break
             swap(nums, i, nums[i] - 1)
 
