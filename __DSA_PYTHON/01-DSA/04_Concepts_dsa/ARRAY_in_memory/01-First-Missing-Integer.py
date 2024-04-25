@@ -1,5 +1,7 @@
 """ Problem[HARD]: [https://leetcode.com/problems/first-missing-positive/]
 """
+
+
 def my_soution_1(arr):
     """
     TC -O(N)
@@ -9,6 +11,11 @@ def my_soution_1(arr):
         - out of N: [10,11,12]
     BoundryCase:
         -
+    Approach:
+        - 2 task
+        - step 1: put unique val in set
+        - step 2: check if 1-n in set
+            - if missing -> i missing
     TradeOff:
         -
     AlternateSol:
@@ -31,7 +38,14 @@ def leetcode_sol(nums: list[int]) -> int:
     """
     TC - O(N)
     SC - O(1)
-
+    Approach:
+        - 2 task
+        - step 1: alot to right index
+            - place integer i at num[i]-1 place
+            - 
+        - step 2: get missing
+            - iterate 1 -> n
+            - if nums[i] != i+1 -> i missing
     NOT Convinced with soltuion - Explain again
     """
 
