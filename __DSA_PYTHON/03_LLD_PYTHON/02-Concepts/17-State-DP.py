@@ -149,22 +149,29 @@ class TrafficLightState(ABC):
     def handle(self):
         pass
 
+    # @abstractmethod
+    # def get_state(self): pass
+
 
 # ConcreteState classes
 class RedState(TrafficLightState):
     def handle(self, traffic_light):
         return f"Stop, the light is red. @{traffic_light}"
-
+    def next(self):
+        return YellowState()
 
 class YellowState(TrafficLightState):
     def handle(self, traffic_light):
         return f"Prepare to stop, the light is yellow.@{traffic_light}"
-
+    def next(self):
+        return GreenState()
 
 class GreenState(TrafficLightState):
     def handle(self, traffic_light):
         return f"Go, the light is green.@{traffic_light}"
 
+    def next(self):
+        return RedState()
 
 # Context class
 class TrafficLight:
@@ -178,8 +185,8 @@ class TrafficLight:
 
         TrafficLight._count += 1
 
-    def change_state(self, new_state):
-        self.state = new_state
+    def change_state(self):
+        self.state = self.state.next()
 
     def request(self):
         return self.state.handle(self)
@@ -192,10 +199,12 @@ class TrafficLight:
 traffic_light = TrafficLight()
 print(traffic_light.request())  # Output: Stop, the light is red.
 
-traffic_light.change_state(YellowState())
+# traffic_light.change_state(YellowState())
+traffic_light.change_state()
 print(traffic_light.request())  # Output: Prepare to stop, the light is yellow.
 
-traffic_light.change_state(GreenState())
+# traffic_light.change_state(GreenState())
+traffic_light.change_state()
 print(traffic_light.request())  # Output: Go, the light is green.
 
 """ Diff bw State-DP & Chain Of Responsibilit-DP

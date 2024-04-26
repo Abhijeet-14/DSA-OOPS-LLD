@@ -27,7 +27,7 @@ from abc import ABC, abstractmethod
 
 Problem:
     - Design FileSystem (File & Directory)
-    - Director - can contain Fail and Directory
+    - Directory - can contain File and Directory
     - How implement common feature
 
     - when implement common feature -> Duplicate Code

@@ -15,8 +15,8 @@ mean?
 
 it should extend the capability of parent not narrow it down.
     class A - move(), walk() 
-    class B - move(), walk(), dance()
-    but NOT -> class B -  move()
+    class B - move(), walk(), dance() -- OK
+    but NOT -> class B -  move() -- NOT OK
 """
 
 
