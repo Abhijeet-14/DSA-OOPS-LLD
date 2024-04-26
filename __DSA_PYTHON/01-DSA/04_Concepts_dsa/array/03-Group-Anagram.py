@@ -1,3 +1,5 @@
+""" Problem[Medium]: [https://leetcode.com/problems/group-anagrams/description/]
+"""
 class Solution:
     def solution_1(self, strs: list[str]) -> list[list[str]]:
         """
