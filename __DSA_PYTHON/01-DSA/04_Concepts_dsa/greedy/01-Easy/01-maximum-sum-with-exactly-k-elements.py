@@ -5,7 +5,7 @@
 class Solution:
     def maximizeSum(self, nums: list[int], k: int) -> int:
         """
-        TC - O(N)
+        TC - O(NLogN)
         SC - O(1)
         Approach:
             S1 - to max sum -- need to max element of array
@@ -20,6 +20,19 @@ class Solution:
         while k > 0:
             sum += nums[0]
             nums[0] = nums[0] + 1
+            k -= 1
+        return sum
+
+    def sol2(self, nums, k):
+        """TC - O(N)"""
+        max_ele = float("-inf")
+        for val in nums:
+            max_ele = max(max_ele, val)
+
+        sum = 0
+        while k > 0:
+            sum += max_ele
+            max_ele += 1
             k -= 1
         return sum
 
