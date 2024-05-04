@@ -6,7 +6,7 @@
 
 - Ashish Pratap Singh 
   - [https://www.linkedin.com/in/ashishps1/recent-activity/all/]
-
+  - [https://www.linkedin.com/posts/ashishps1_my-newsletter-recently-reached-8k-subscribers-activity-7189118441163763712-UPXg?utm_source=share&utm_medium=member_desktop]
 
 ## [📌 System Design Key Concepts](https://github.com/ashishps1/awesome-system-design-resources/tree/main) 
 - [Top 15 Tradeoffs](https://newsletter.ashishps.com/p/system-design-top-15-trade-offs)
