@@ -26,8 +26,8 @@
    - Bubble Sort
    - Selection Sort
    - Insertion Sort
-   - Merge Sort *
-   - Quick Sort *
+   - Merge Sort
+   - Quick Sort
    - Heap Sort
    - Radix Sort
 2. Searching Algorithms
@@ -64,6 +64,47 @@
 18. Traveling Salesman Problem
 19. Longest Common Subsequence (LCS)
 20. Minimum Spanning Tree (MST) Algorithms
+- Algo on Array & String:
+    - Swap sort
+    - in-place
+    - Sliding window(Fixed, Variable)
+    - Multi pointer(2, 3)
+    - Query Processing
+    - prefix - sufix
+    - Array:
+        - 2 sum
+        - 2 pointer
+        - sliding window
+        - in-place
+        - swap sort
+        - Kadane Algo
+        - prefix - suffix sum
+        - Binary Search
+        - Jump Search ()
+        - Expontenial Search (ex-infinit array & BS)
+        - sort (merge & quick)
+        - divide & Conquer Algo
+        - Max|min subarray 
+        - Longest Increase|Decrease sub-sequence
+        - Max|min sum of subarray 
+        - Sieve of Eartho (for Prim numbers)
+        - LRU
+        - Suffix Tree (searching pattern in string)
+        - Segment Tree (range queries)
+        - Fenwick Tree (sum of queries)
+        
+
+    - Strings:
+        - Basic
+            - Sliding Window 
+            - Rolling hashing
+            - Rabin-Karp
+        - Intermediate
+            - KMP & Pre-fix
+            - z-function
+            - suffix array
+            - Trie
+            - Huffman Coding
 
 
 ### Data Structures - ADVANCED:
