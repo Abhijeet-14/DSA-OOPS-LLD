@@ -1,3 +1,7 @@
+""" Problem: [https://leetcode.com/problems/gas-station/]
+"""
+
+
 def can_complete_circuit_O_N(gas: list[int], cost: list[int]) -> int:
     """
     TC: O(N)
@@ -9,6 +13,9 @@ def can_complete_circuit_O_N(gas: list[int], cost: list[int]) -> int:
         - so if we start at 'i' and reach to 'N' -->
         - then, sum(gas[0:i-1]) -  sum(cost[0:i-1]) + tank >= 0 -- then success --
         - able to reach 'i' circularlly.
+    Main Concept:
+        - at i, sum_of_total_gas[i-1] + tank_gas - total_travel_cost[i-1] >= 0
+            - tank + sum(gas[0:i-1]) - sum(cost[0:i-1])
     """
     N = len(gas)
     if sum(gas) < sum(cost):
