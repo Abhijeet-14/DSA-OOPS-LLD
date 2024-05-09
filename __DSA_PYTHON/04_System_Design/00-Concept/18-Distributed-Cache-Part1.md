@@ -30,14 +30,27 @@ S4 --->
 
 ## Distributed Caching
 - we have Cache-Pool
+CS1 - handle A-F
+CS2 - G-M
+CS3 - N-V
+.....
+
 ```
 S1 --> Cache-Client ---> 
             ---> Cache POOL[Cache Server 1, CS2, CS3]
 S2 --> Cache-Client
 ```
-
 - How cache server is alloted in Cache Pool?
     - Consitent Hashing
+
+# Cache Client
+    - know which Cache-Server -- support what range
+    - etc
+
+
+# Cache Pool
+    - hold multi Cache Server
+    - each cache server -- follows -- Leader(write) + followers(read replica)
 
 ## Strategy
 1. Cache Aside
