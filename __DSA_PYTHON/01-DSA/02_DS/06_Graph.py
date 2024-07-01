@@ -103,17 +103,9 @@ class Node:
         return self.wt < other.wt
 
 
-def add_edge(node_1, node_2, wt):
-    if node_1 in graph:
-        graph[node_1].append(Node(node_2, wt))
-    else:
-        graph[node_1] = [Node(node_2, wt)]
-
-    # bi-direction
-    if node_2 in graph:
-        graph[node_2].append(Node(node_1, wt))
-    else:
-        graph[node_2] = [Node(node_1, wt)]
+def add_edge(u, v, wt):
+    graph[u] = graph.get(u, []) + [Node(v, wt)]
+    graph[v] = graph.get(v, []) + [Node(u, wt)]
 
 
 add_edge(0, 1, 4)
@@ -153,6 +145,26 @@ def shortest_path(n):
 shortest_path = shortest_path(9)
 
 
+# """
+# class Node:
+#     def __init__(self, to, wt):
+#         self.to = to
+#         self.wt = wt
+
+
+#
+#     def __lt__(self, other):
+#         return self.wt < other.wt
+# """
+class Node:
+    def __init__(self, to, wt):
+        self.to = to
+        self.wt = wt
+
+    def __lt__(self, other):
+        return self.wt < other.wt
+
+
 def dijkstra_w(source):
     heap = []
 
@@ -179,3 +191,16 @@ print("\nShortest Path: ", shortest_path)
 print("\n============ Cycle ============")
 print("\n============ UnCycle ============")
 print("\n============ Topological ============")
+
+
+heap = []
+
+heapq.heappush(heap, (5, 1))
+heapq.heappush(heap, (4, 2))
+heapq.heappush(heap, (3, 3))
+heapq.heappush(heap, (2, 4))
+heapq.heappush(heap, (1, 5))
+
+print(heap)
+
+heapq.heapify(heap, key=lambda x: x[1])

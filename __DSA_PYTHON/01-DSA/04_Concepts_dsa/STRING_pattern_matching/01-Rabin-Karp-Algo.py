@@ -1,10 +1,11 @@
-def search(pat, txt):
+def search_Rabin_Karp(pat, txt):
     """
     TC - O(N+M) for best case
     and Worst Case, TC - O(N*M)
     Worst Case:
         txt: AAAAAAAAAAA
         pat: AAA
+    TestCase passed: 1022/1121 - TLE
     """
     # code here
     m = len(pat)
@@ -39,3 +40,22 @@ def search(pat, txt):
                 txt_hash = txt_hash + prim
 
     return result if result else [-1]
+
+
+def search_map(self, pat, txt):
+        """
+        TC - O(N+M)
+        TestCase passed: 1012/1121 - Collision Error
+        """
+        
+        map = {}
+        
+        n = len(txt)
+        m = len(pat)
+        for i in range(n-m+1):
+            curr_txt = txt[i:i+m]
+            map[curr_txt] = map.get(curr_txt, []) + [i]
+        
+        if map.get(pat):
+            return [val+1 for val in map[pat]]
+        return [-1]
