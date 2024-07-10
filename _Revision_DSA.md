@@ -318,7 +318,7 @@
       - SC - O(V)
   - 
     <details> 
-        <summary>Code:</summary>
+      <summary>Code:</summary>
 
         ```python
             fun(V, edges, src):
@@ -506,7 +506,7 @@
       - SC - O(V)
   - 
     <details> 
-        <summary>Code:</summary>
+      <summary>Code:</summary>
     
         ```python
             def fun(N, M, grid, Q):
@@ -549,8 +549,8 @@
       - TC - O(N*M) + O(Q)
       - SC - O(V)
   - 
-    <details> 
-        <summary>Code:</summary>
+    <details>   
+      <summary>Code:</summary>
     
         ```python
             def fun(N, M, grid, Q):
@@ -601,7 +601,7 @@
       - SC - O(V)
   - 
     <details> 
-        <summary>Code:</summary>
+      <summary>Code:</summary>
     
         ```python
             def fun(v, edges):
@@ -930,7 +930,7 @@
     - Complexity:
       - TC - O(V*LogE)
   - <details> 
-        <summary>Code:</summary>
+      <summary>Code:</summary>
     
         ```python
             def fun(V, edges, src, dest):
@@ -944,18 +944,19 @@
     - Complexity:
       - TC - O(V*LogE)
   - <details> 
-        <summary>Code:</summary>
-    
+      <summary>Code:</summary>
+
         ```python
             def fun(V, edges, src, dest):
                 ... code ...
         ```
     </details>
 
+## ---- end ---
 </details>
 
 <details>
-    <summary>Greedy</summary>
+  <summary>Greedy</summary>
   
   ### Q1. Recursion
 
@@ -971,19 +972,176 @@
 
 <details>
     <summary>Tree</summary>
-  
-  ### Q1. Recursion
 
-  Some text inside the collapsible section.
+### Q1. Check for Balanced Binary Tree
+  - Question:
+    - r
+  - **Algo:**
+    - i
+    - Complexity:
+      - TC - 
+      - SC - 
+  - 
+    <details> 
+      <summary>Code:</summary>
 
-  - Item 1
-  - Item 2
-  ```python
-    fun(ad):
-        return 10
-  ```
+        ```python
+            fun(a):
+              return True
+        ```
+    </details>
+
+### Q2. Boundry Traversal
+  - Question:
+    - r
+  - **Algo:**
+    - i
+    - Complexity:
+      - TC - 
+      - SC - 
+  - 
+    <details> 
+      <summary>Code:</summary>
+
+        ```python
+            fun(a):
+              return True
+        ```
+    </details>
+
+### Q3. Print path of root to Node
+  - Question:
+    - r
+  - **Algo:**
+    - i
+    - Complexity:
+      - TC - 
+      - SC - 
+  - 
+    <details> 
+      <summary>Code:</summary>
+
+        ```python
+            fun(a):
+              return True
+        ```
+    </details>
+
+### Q3. Longest Common Ancestor - V.V.I
+  - Question:
+    - r
+  - **Algo:**
+    - i
+    - Complexity:
+      - TC - 
+      - SC - 
+  - 
+    <details> 
+      <summary>Code:</summary>
+
+        ```python
+            fun(a):
+              return True
+        ```
+    </details>
+    
+
+### Q4. Print Node at K-distance from target
+  - Question:
+    - r
+  - **Algo:**
+    - i
+    - Complexity:
+      - TC - 
+      - SC - 
+  - 
+    <details> 
+      <summary>Code:</summary>
+
+        ```python
+            fun(a):
+              return True
+        ```
+    </details>
+    
+### Q5. Minimum time to burn all Tree from Node
+  - Question:
+    - r
+  - **Algo:**
+    - i
+    - Complexity:
+      - TC - 
+      - SC - 
+  - 
+    <details> 
+      <summary>Code:</summary>
+
+        ```python
+            fun(a):
+              return True
+        ```
+    </details>
+    
+    
+### Q6. Morris Traversal
+  - Question:
+    - r
+  - **Algo:**
+    - i
+    - Complexity:
+      - TC - 
+      - SC - 
+  - 
+    <details> 
+      <summary>Code:</summary>
+
+        ```python
+            fun(a):
+              return True
+        ```
+    </details>
+    
+### Q7. Flatten Binary Tree to Linked-List
+  - Question:
+    - r
+  - **Algo:**
+    - i
+    - Complexity:
+      - TC - 
+      - SC - 
+  - 
+    <details> 
+      <summary>Code:</summary>
+
+        ```python
+            fun(a):
+              return True
+        ```
+    </details>
+    
 </details>
+<details>
+    <summary>Binary Search Tree</summary>
 
+### Q1. Max Sum of of BST in BT if exist
+  - Question:
+    - r
+  - **Algo:**
+    - i
+    - Complexity:
+      - TC - 
+      - SC - 
+  - 
+    <details> 
+      <summary>Code:</summary>
+
+        ```python
+            fun(a):
+              return True
+        ```
+    </details>
+</details>
+  
 <details>
     <summary>Trie</summary>
   
@@ -1016,7 +1174,7 @@
     - if h[i] > st[-1][0] --> insert to st --> cal max_area
     - else: --> find_min h --> cal max_area
     - Complexity:
-      - TC - O(2N) * O(26) [for new max_freq]
+      - TC - O(2N)
       - SC - O(N)
   - 
     <details> 
