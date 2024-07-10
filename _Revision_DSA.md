@@ -63,17 +63,165 @@
 <details>
   <summary>Sliding Window</summary>
   
-  ### Q1. Array
+### Q1. Longest Reapeating Substrubg of K-replacement
+  - **Algo:**
+    - s=AADADDA, k=2--> o/p = 5 
+    - AADAD, 2 D's can be replaced
+    - or DADDA, 2 A's can be replaced
+    - so
+    - each time -- we need max_frequency of 1 character 
+    - and total minus of max_frequency --> minor character
+    - this needs to be less than k. 
+    - Complexity:
+      - TC - O(2N) * O(26) [for new max_freq]
+      - SC - O(N)
+  - 
+    <details> 
+      <summary>Code:</summary>
 
-  Some text inside the collapsible section.
+        ```python
+            fun(s, k):
+              map = {}
+              max_freq = 0
+              maxi = 0
+              l = 0
+              for r in range(N):
+                map[s[r]] += 1
+                max_freq = max(map[s[r]], max_freq)
 
-  - Item 1
-  - Item 2
-  ```python
-    fun(ad):
-        return 10
-  ```
+                # total - max = minor char
+                while ((r-l+1) - max_freq) > k:
+                  map[s[l]] -= 1
+                  # new max_freq
+                  for k, v in map.values():
+                    max_freq = max(v, max_freq)
+                  l += 1
+                
+                maxi = max(max_freq, maxi)
+
+              return maxi
+        ```
+    </details>
+
+
+### Q2. MINimum Window Substring 
+  - **Algo:**
+    - s = adobecodebanc, t = abc
+    - o/p - 4 [banc]
+    - Q: mini size substring which contain all char of t
+    - here MIN is needed
+    - so when we found substring which match with t -- 
+    - then in that substring -- we need to find min size in which -- t is match
+    - Complexity:
+      - TC - O(2N) * O(M) [t and substring match]
+      - SC - O(2N)
+      - Optimized - O(2N)
+  - 
+    <details> 
+      <summary>Code 1: O(2N*M)</summary>
+
+        ```python
+            fun(s, t):
+              map_t = {}
+              map_s = {}
+              for ch in t:
+                map[ch]++
+
+              mini = N
+              l = 0
+              for r in range(N):
+                if s[r] in map_t:
+                  map_s[s[r]]++
+
+                while map_s == map_t: # O(M)
+                  mini = min(r-l+1, mini)
+
+                  if s[l] in map_s:
+                    map_s[s[l]]--
+                    if map_s[s[l]] == 0: 
+                      del map_s[s[l]]
+                  l--
+              return mini
+        ```
+    </details>
+
+    <details> 
+      <summary>Code 1: O(2N*1)</summary>
+        use count of have & need
+
+        ```python
+            fun(s, t):
+              need = {}
+              need_cnt = 0 # no of keys
+
+              have = {}
+              have_cnt = 0
+
+              for ch in t:
+                need[ch]++
+              
+              need_cnt = len(need.keys())
+
+              for r in range(N):
+                if s[r] in need:
+                  have[s[r]]++
+                  if have[s[r]] >= need[s[r]]: # only incre have_cnt -> Value of char matches
+                    have_cnt++
+                    
+                while have_cnt == need_cnt: #O(1)
+                  mini = min(r-l+1, mini)
+                  if s[l] in have:
+                    have[s[l]]--
+                    if have[s[l]] < need[s[l]]:
+                      have_cnt--
+                  l++
+
+              return mini
+
+        ```
+
+    </details>
+
+ 
+### Q3. Sliding Window MAXIMUM
+  - **Algo:**
+    - s=[1,3,-1,-3,5,3,6,7], k=3 --> o/p = [3,3,5,5,6,7] 
+    - [1,3,-1] ->3 || [3,-1,-3] -> 3 || [-1,-3,5] = 5 ....
+    - BF - O(N^2) - N loop and k lopp -- find max everytime
+    - Optimize:
+      - use deque (q)
+      - store val[i] and if val[i] > q[-1] --> pop right
+      - if l == q[0] --> pop left
+    - Complexity:
+      - TC - O(2N)
+      - SC - O(N)
+  - 
+    <details> 
+      <summary>Code:</summary>
+
+        ```python
+            fun(a, k):
+              q = deque()
+              res = []
+              l = 0
+              for r in range(N):
+                while q and a[r] > a[q[-1]]:
+                  q.pop() # pop right
+
+                q.append(r) # store index -- help in windoe slide
+
+                if l > q[0]:
+                  q.popleft()
+                
+                if r + 1 >= k: # found max at q[0]
+                  res.append(a[q[0]]) 
+                  l++
+
+              return res
+        ```
+    </details>
 </details>
+
 <details>
   <summary>Two Pointer</summary>
   
@@ -135,7 +283,7 @@
 </details>
 
 <details>
-    <summary>Dynamic Programming</summary>
+    <summary>DP</summary>
   
   ### Q1. Recursion
 
@@ -852,17 +1000,52 @@
 </details>
 <details>
     <summary>Stack</summary>
-  
-  ### Q1. Recursion
 
-  Some text inside the collapsible section.
+### Q1. Area of Histogram - HARD
+  - Question:
+    - reactange given in x-y axis
+    - each reactangle of width=1 and height is h[i]
+    - find max area formed.
+    - h = [2,1,5,6,2,3] o/p - 10
+  - **Algo:**
+    - i = 0 --> max_area = 2*1 (h*w) = 2
+    - i = 1 --> max_area = max[1 (h[1]*1), 2(h[0]*1), 1*2(h=min(h[1], h[0]), w=(1-0 + 1))] = 2
+    - i = 2 --> max_area = max[5, 1*2 (min(1,5), 2-1+1)] = 5
+    - i = 3 --> max_area = max[6, 5*2 (min(5,6), 3-2+1)] = 10
+    - so we need to put (h[i], i) in stack
+    - if h[i] > st[-1][0] --> insert to st --> cal max_area
+    - else: --> find_min h --> cal max_area
+    - Complexity:
+      - TC - O(2N) * O(26) [for new max_freq]
+      - SC - O(N)
+  - 
+    <details> 
+      <summary>Code:</summary>
 
-  - Item 1
-  - Item 2
-  ```python
-    fun(ad):
-        return 10
-  ```
+        ```python
+            fun(a):
+              max_area = 0
+              st = []
+
+              for i, h in enumerate(a):
+                start = i
+                while st and st[-1][0] > h:
+                  j, old_h = st.pop()
+
+                  # h is minimum  & i-j+1 is width
+                  max_area = max( h*(i-j+1) , max_area)
+                  start = j # new width of min h
+
+                st.append((h, start))
+
+              while st: # st not empty -- check for all min h with its width 
+                i, h = st.pop()
+                max_area = max( h*(N-i) , max_area) # N-i - mean h is min in this region
+
+              return max_area
+        ```
+    </details>
+
 </details>
 <details>
     <summary>Linked-List</summary>
