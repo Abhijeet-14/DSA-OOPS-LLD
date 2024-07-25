@@ -18,6 +18,7 @@
         ```
       </details>
     
+  ### END ###
   </details>
 
 - <details><summary>Array</summary>
@@ -32,6 +33,7 @@
       fun(ad):
           return 10
     ```
+  ### END ###
   </details>
 
 - <details><summary>String</summary>
@@ -46,6 +48,7 @@
       fun(ad):
           return 10
     ```
+  ### END ###
   </details>
 
 - <details><summary>Sliding Window</summary>
@@ -207,6 +210,7 @@
                 return res
           ```
       </details>
+  ### END ###
   </details>
 
 - <details><summary>Two Pointer</summary>
@@ -221,6 +225,7 @@
       fun(ad):
           return 10
     ```
+  ### END ###
   </details>
 
 - <details><summary>Prefix Sum</summary>
@@ -235,6 +240,7 @@
       fun(ad):
           return 10
     ```
+  ### END ###
   </details>
 
 
@@ -250,6 +256,7 @@
       fun(ad):
           return 10
     ```
+  ### END ###
   </details>
 
 - <details><summary>Backtracking</summary>
@@ -264,6 +271,7 @@
       fun(ad):
           return 10
     ```
+  ### END ###
   </details>
 
 - <details><summary>DP</summary>
@@ -316,6 +324,7 @@
           return res if res != float("inf") else 0
         ```
       </details>
+  ### END ###
   </details>
 
 - <details><summary>Graph</summary>
@@ -972,6 +981,7 @@
           ```
       </details>
 
+  ### END ###
   </details>
 
 - <details><summary>Greedy</summary>
@@ -986,6 +996,7 @@
       fun(ad):
           return 10
     ```
+  ### END ###
   </details>
 
 - <details><summary>Tree</summary>
@@ -1056,10 +1067,23 @@
       <details> 
         <summary>Code:</summary>
 
-          ```python
-              fun(a):
-                return True
-          ```
+        ```python
+        def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+            def solve(node):
+                if node in [None, p, q]:
+                    return node
+
+                left = solve(node.left)
+                right = solve(node.right)
+
+                if left == None:
+                    return right
+                if right == None:
+                    return left
+                
+                return node
+            return solve(root)
+        ```
       </details>
       
 
@@ -1136,6 +1160,51 @@
           ```
       </details>
       
+  ### Q8. Path Sum 3
+    - Question:
+    - **Algo:**
+        - use 2-Sum + PrefixSum
+        - do preorder travel
+        - at each node calculate its prefix-sum and 
+        - if (prefixSum-target) in map -- increase the cnt by map[key]
+        - add preSum in map 
+        - remove node from map - once all child are visted
+        - intialize map - {0:1} - empty tree
+      - Complexity:
+        - TC - O(N)
+        - SC - O(N)
+      <details> 
+        <summary>Code:</summary>
+
+        ```python
+        def pathSum(self, root: TreeNode, targetSum: int) -> int:
+            map = {0:1} # intailize - empty tree sum = 0 
+            cnt = 0
+
+            def inorder(node, ssum):
+                nonlocal cnt
+                if not node:
+                    return
+
+                prefix_sum = node.val + ssum
+                if prefix_sum - targetSum in map.keys():
+                    cnt += map[prefix_sum-targetSum]
+
+                map[prefix_sum] = map.get(prefix_sum, 0) + 1
+                inorder(node.left, prefix_sum)
+                inorder(node.right, prefix_sum)
+
+                # remove node pre sum - once all child visited
+                map[prefix_sum] -= 1
+                if map[prefix_sum] == 0:
+                    del map[prefix_sum]
+                    
+            inorder(root, 0)
+            return cnt
+        ```
+      </details>
+    
+  ### END ###
   </details>
 
 - <details><summary>Binary Search Tree</summary>
@@ -1157,6 +1226,7 @@
                 return True
           ```
       </details>
+  ### END ###
   </details>
   
 - <details><summary>Trie</summary>
@@ -1214,6 +1284,7 @@
                 return True
           ```
       </details>
+  ### END ###
   </details>
 
 - <details><summary>Stack</summary>
@@ -1225,13 +1296,13 @@
       - find max area formed.
       - h = [2,1,5,6,2,3] o/p - 10
     - **Algo:**
-      - i = 0 --> max_area = 2*1 (h*w) = 2
-      - i = 1 --> max_area = max[1 (h[1]*1), 2(h[0]*1), 1*2(h=min(h[1], h[0]), w=(1-0 + 1))] = 2
-      - i = 2 --> max_area = max[5, 1*2 (min(1,5), 2-1+1)] = 5
-      - i = 3 --> max_area = max[6, 5*2 (min(5,6), 3-2+1)] = 10
-      - so we need to put (h[i], i) in stack
-      - if h[i] > st[-1][0] --> insert to st --> cal max_area
-      - else: --> find_min h --> cal max_area
+        - i = 0 --> max_area = 2*1 (h*w) = 2
+        - i = 1 --> max_area = max[1 (h[1]*1), 2(h[0]*1), 1*2(h=min(h[1], h[0]), w=(1-0 + 1))] = 2
+        - i = 2 --> max_area = max[5, 1*2 (min(1,5), 2-1+1)] = 5
+        - i = 3 --> max_area = max[6, 5*2 (min(5,6), 3-2+1)] = 10
+        - so we need to put (h[i], i) in stack
+        - if h[i] > st[-1][0] --> insert to st --> cal max_area
+        - else: --> find_min h --> cal max_area
       - Complexity:
         - TC - O(2N)
         - SC - O(N)
@@ -1262,7 +1333,7 @@
                 return max_area
           ```
       </details>
-
+  ### END ###
   </details>
 
 - <details><summary>Linked-List</summary>
@@ -1277,6 +1348,7 @@
       fun(ad):
           return 10
     ```
+  ### END ###
   </details>
 
 - <details><summary>Heap</summary>
@@ -1291,6 +1363,7 @@
       fun(ad):
           return 10
     ```
+  ### END ###
   </details>
 
 - <details><summary>Binary Search</summary>
@@ -1305,6 +1378,7 @@
       fun(ad):
           return 10
     ```
+  ### END ###
   </details>
 
 - <details><summary>Advanced - Segment | Fenwick | Bit Manipulation</summary>
@@ -1319,4 +1393,5 @@
       fun(ad):
           return 10
     ```
+  ### END ###
   </details>
