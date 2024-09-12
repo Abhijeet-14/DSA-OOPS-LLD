@@ -22,13 +22,13 @@ class URLShortener:
         # Base URL for all shortened URLs
         self.base_url = "https://short.ly/"
         # Characters for generating the short URL (Base62)
-        self.base62_chars = string.ascii_letters + string.digits
         # Length of the random short URL string
         self.short_url_length = 6
 
     def generate_short_url(self):
         """Generates a random short URL key."""
-        return ''.join(random.choice(self.base62_chars) for _ in range(self.short_url_length))
+        base62_chars = string.ascii_letters + string.digits
+        return ''.join(random.choice(base62_chars) for _ in range(self.short_url_length))
 
     def shorten_url(self, long_url):
         """Shortens a long URL and stores the mapping."""
