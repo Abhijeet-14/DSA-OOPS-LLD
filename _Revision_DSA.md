@@ -1314,22 +1314,27 @@
               fun(a):
                 max_area = 0
                 st = []
+                N = len(heights)
 
-                for i, h in enumerate(a):
-                  start = i
-                  while st and st[-1][0] > h:
-                    j, old_h = st.pop()
+                for i, h in enumerate(heights):
+                    start = i
+                    # why st[-1][0] > h? 
+                    # we are checking, if peek element can be extended further
+                    # if no -> then pop and calculate its extended area
+                    while st and st[-1][0] > h:
+                        old_h, j = st.pop()
+                        # calulate max_area for old_h as its poping
+                        # current will calculate in Line 26 "for h, i in st"
+                        max_area = max(max_area, old_h * (i-j))
+                        
+                        # as it
+                        start = j
 
-                    # h is minimum  & i-j+1 is width
-                    max_area = max( h*(i-j+1) , max_area)
-                    start = j # new width of min h
+                    st.append((h, start))
 
-                  st.append((h, start))
-
-                while st: # st not empty -- check for all min h with its width 
-                  i, h = st.pop()
-                  max_area = max( h*(N-i) , max_area) # N-i - mean h is min in this region
-
+                for h, i in st:
+                    max_area = max(max_area, h* (N-i))
+                
                 return max_area
           ```
       </details>
