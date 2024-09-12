@@ -1,3 +1,11 @@
+"""
+User Input --> Lexical Analyzer --> Context Manager --> Suggestion Engine --> Code Database/Trie
+                            |                                   |
+                            |---> Scope Resolver & Ranking <--  |
+                                                                 |
+                            |--> Suggestion Renderer             |
+
+"""
 class TrieNode:
     def __init__(self):
         self.children = {}
