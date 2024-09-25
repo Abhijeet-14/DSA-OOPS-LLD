@@ -152,14 +152,16 @@ if __name__ == "__main__":
     my_pizza = ConcreateBasePizza("Normal")
 
     # add chicken
-    my_pizza = ChickenPizza(my_pizza)
+    my_pizza_chicken = ChickenPizza(my_pizza)
 
     # add Cheese
-    my_pizza = CheesePizza(my_pizza)
+    my_pizza_chesse = CheesePizza(my_pizza_chicken)
 
     # add Spicy
-    my_pizza = SpicyPizza(my_pizza)
-    print(my_pizza.get_total_name(), my_pizza.cost())
+    my_pizza_spicy = SpicyPizza(my_pizza)
+
+    print(my_pizza_chesse.get_total_name(), my_pizza_chesse.cost())
+    print(my_pizza_spicy.get_total_name(), my_pizza_spicy.cost())
 
 
 # Questions:

@@ -61,7 +61,7 @@ class LogHandler(ABC):
     _ERROR_PRIORITY = 3
 
     def __init__(self, logger_handler):
-        self.next_handler = logger_handler
+        self.next_handler: 'LogHandler' = logger_handler
 
     def log(self, log_level, message):
         if self.next_handler != None:

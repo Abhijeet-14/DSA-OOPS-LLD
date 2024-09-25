@@ -53,3 +53,14 @@ Then coding...
     - scalablity is prioirty.
     - confirm?? each object Scalable?
 """
+
+
+def fun():
+    try:
+        a = 1/0
+    except Exception as e:
+        print(1/0)
+    finally:
+        print(e)
+
+fun()               

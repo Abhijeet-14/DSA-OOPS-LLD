@@ -200,7 +200,7 @@ class VendingMachineManager:  # Collector
 class DeliverSTATE(StateInterface):
     def __init__(self):
         super().__init__(
-            VendingMachineStateType.DELIVER_PRODUCT, "Deliver product is in progress"
+            VendingMachineStateType.DELIVER_PRODUCT, "Err: Deliver product is in progress"
         )
 
     def insert_cash_button(self, machine: VendingMachine):
@@ -226,7 +226,7 @@ class DeliverSTATE(StateInterface):
 class SelectProductSTATE(StateInterface):
     def __init__(self):
         super().__init__(
-            VendingMachineStateType.SELECT_PRODUCT, "Select product is in progress"
+            VendingMachineStateType.SELECT_PRODUCT, "Err: Select product is in progress"
         )
 
     def insert_cash_button(self, machine: VendingMachine):
@@ -275,7 +275,7 @@ class SelectProductSTATE(StateInterface):
 class HasMoneySTATE(StateInterface):
     def __init__(self):
         super().__init__(
-            VendingMachineStateType.HAS_MONEY, "Insert Coin operation is in progress"
+            VendingMachineStateType.HAS_MONEY, "Err: Insert Coin operation is in progress"
         )
 
     def insert_cash_button(self, machine):
@@ -304,7 +304,7 @@ class IdleSTATE(StateInterface):
     def __init__(self):
         super().__init__(
             VendingMachineStateType.IDLE,
-            "Machine is IDLE, click Insert Cash Button first",
+            "Err: Machine is IDLE, click Insert Cash Button first",
         )
 
     def insert_cash_button(self, machine: VendingMachine):

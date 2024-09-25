@@ -35,7 +35,7 @@ And, Observer has 1 feat:
 
 
 class Observer(ABC):
-    def update(self):
+    def update(self, subject):
         pass
 
 
@@ -54,7 +54,7 @@ class Subject(ABC):
         pass
 
     @abstractmethod
-    def set_data(self):
+    def set_data(self, data):
         """Implement on what condition notify observer"""
         pass
 
@@ -78,10 +78,10 @@ class ConcreateSubject(Subject):
 
     def notify(self):
         for observer in self.observers:
-            observer.update()
+            observer.update(self)
 
     def set_data(self, data):
-        if self.data == 0:
+        if self.data %2 == 0:
             self.notify()
 
         self.data += data
@@ -96,10 +96,10 @@ class ConcreateMobileObserver(Observer):
         self.subject = subject
         self.phone = phone
 
-    def update(self):
-        stock = self.subject.get_data()
+    def update(self, subject):
+        stock = subject.get_data()
         sms_message = (
-            f"Message sent to {self.phone}, {self.subject.name} is available, {stock}"
+            f"Message sent to {self.phone}, {subject.name} is available, {stock}"
         )
         self.send_msg(sms_message)
 
@@ -113,9 +113,9 @@ class ConcreateEmailObserver(Observer):
         self.subject = subject
         self.email = email
 
-    def update(self):
-        stock = self.subject.get_data()
-        email_message = f"Email sent to {self.email}, {self.subject.name} is available"
+    def update(self, subject):
+        stock = subject.get_data()
+        email_message = f"Email sent to {self.email}, {subject.name} is available"
         self.send_email(email_message)
 
     def send_email(self, message):
