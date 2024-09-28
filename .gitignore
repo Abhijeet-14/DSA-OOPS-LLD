@@ -4,3 +4,11 @@ venv/
 __pycache__/
 
 node_modules/
+
+
+node_modules/
+dist/
+.cache/
+.parce-cache/
+
+*.env

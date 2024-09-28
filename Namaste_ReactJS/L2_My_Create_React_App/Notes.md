@@ -10,7 +10,7 @@
 4. what is package-lock.json? why? diff?
     > p-l.json -- keep track of extact version of package
 5. node_modules?
-    > loaded extact package's code in this folder
+    > loads exact package's code in this folder
     > it also pull package's depencey code
 6. React CDN - takes time -- easy to manage thro npm
     > npm install react & react-dom
@@ -24,11 +24,12 @@
 9. Solution?
    > define type=module in script  --  <script type="module" src="./App.js"></script>
     > run thro server - npx parcel indx.html
-    > if error install "parcel-bundler" -> then run "npx parcel index.html"
+    > if error >> install "parcel-bundler" -> then run "npx parcel index.html"
+    > if error "parcel error: Segmentation fault "$NODE_EXE" "$NPX_CLI_JS" "$@" --> then uninstall "@parce/source-map"
 10. Parcel
     > Dev Build
     > Local server
-    > HMR - Hot Module Replacement
+    > HMR - Hot Module Replacement - auto refresh 
     > File Watcher Algo - written in C++
     > Faster Build -- by Caching
     > Image optimization
@@ -37,6 +38,10 @@
     > Compressing
     > Code spliting
     > Differntial Bundling - support all browser(old)
+    > HTTPs -- npx parcel index.html --https
+    > Error Handling
+    > Tree Shaking - remove unused code
+    Read Parcel documentation
 11. lets make compatible to Older Broswer
     > use 'browserslist"
     > "browserslist": ["last 2 chrome version", "last 2 firefox version" ]
