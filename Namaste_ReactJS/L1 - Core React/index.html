@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Lesson 6 -->
+    <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+    <div id="root">
+        <!-- Lesson 1 -->
+        <h1>Hello World!</h1>
+    </div>
+    <!-- Lesson 2 -->
+    <!-- <script>
+        const root = document.getElementById("root")
+        const head = document.createElement("h1")
+        head.innerHTML = "Heelo World 2"
+        root.appendChild(head)
+    </script> -->
+
+    <!-- Lesson 3 - Inject REACT by CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Lesson 4 - Use React and ReactDOm -->
+    <!-- <script>
+        const fun = () => {
+            const headi = React.createElement("h1", {}, "Hello World by React CDN")
+            const rooti = ReactDOM.createRoot(document.getElementById("root"))
+            // rooti.innerHTML = ""
+            rooti.render(headi)
+        }
+
+        setTimeout(() => {
+            fun()
+        }, 3000)
+    </script> -->
+
+    <!-- Lesson 5 - use JS File -->
+    <script src="./App.js"></script>
+</body>
+
+</html>
