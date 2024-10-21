@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.logo {
+    width: 7rem;
+    margin: 0.25rem .75rem
+}
+
+.nav-items > ul {
+    font-size: 1.5rem;
+    display: flex;
+    list-style-type: none;
+    padding: 0 1.25rem;
+}
+
+.nav-items > ul > li {
+    padding: .625rem;
+    margin: .625rem
+}
+

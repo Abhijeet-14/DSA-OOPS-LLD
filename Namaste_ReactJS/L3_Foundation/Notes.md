@@ -11,3 +11,8 @@
 4. JSX -> Babel transpiles to -> React.createElement -> React-JS Object -> after render -> HTML Element
    > React Element
    > const heading = (<h1 className="h1" tabIndex="2">Hey JSX</h1>)
+   > Babel is JS Complier
+
+5. Component Composition - Component inside a component
+   > inside a component - {write any JS here}
+   > but JS verify/sanitize written code inside '{ code }'
