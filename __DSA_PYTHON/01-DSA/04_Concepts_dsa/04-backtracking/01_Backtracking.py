@@ -70,6 +70,8 @@ def place_queens(board, col):
             board[row][col] = "Q"
             if place_queens(board, col + 1):
                 return True
+            
+            # backtrack
             board[row][col] = -1
 
     return False
