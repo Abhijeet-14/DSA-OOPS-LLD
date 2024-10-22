@@ -2,7 +2,7 @@ result = []
 
 def solve(n, arr, res):
     """
-    TC - O(2^N)
+    TC - O(2^N), SC - o(N) [rec-stack]
     In all subsequence -- 2 option
     - take or Not-take
     """
